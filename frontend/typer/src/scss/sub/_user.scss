@@ -1,0 +1,29 @@
+@import '../utils';
+
+.avatar-img {
+  display: block;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-size: cover;
+
+  &.fa {
+    font-size: 35px;
+  }
+  &.size-small {
+    width: 25px;
+    height: 25px;
+    
+    &.fa {
+      font-size: 25px;
+    }
+  }
+  &.size-big {
+    width: 100px;
+    height: 100px;
+
+    &.fa {
+      font-size: 100px;
+    }
+  }
+}

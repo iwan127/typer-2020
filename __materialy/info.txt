@@ -1,0 +1,22 @@
+cd typerait
+mkdir www
+cd www
+git clone https://wojciech_iwaniszewski@bitbucket.org/wojciech_iwaniszewski/typer.git
+cp etc/typerait/settings_local_working.py typer/settings_local.py
+cp etc/typerait/typer.wsgi typer.wsgi
+workon typerait
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py collectstatic
+python manage.py createsuperuser
+
+python manage.py loaddata teams.json
+python manage.py loaddata stadiums.json
+python manage.py loaddata rounds.json
+python manage.py loaddata groups.json
+python manage.py loaddata group-teams.json
+python manage.py loaddata points.json
+python manage.py loaddata matches.json
+
+[sudo supervisorctl status]
+sudo supervisorctl restart typerait

@@ -1,0 +1,5 @@
+<app-card [title]="'Aktywacja konta'">
+  <div *ngIf="submitted">
+    Twoje konto jest aktywne. Możesz się <a [routerLink]="['/', 'login']">zalogować</a>
+  </div>
+</app-card>

@@ -1,0 +1,3 @@
+<app-card [title]="'Zasady'">
+  <div *ngIf="loaded && rules" [innerHTML]="rules.content | keepHtml"></div>
+</app-card>

@@ -1,0 +1,27 @@
+<ng-container *ngIf="userObj">
+  <span *ngIf="!canShowAsLink" class="d-flex align-items-center">
+    <ng-container *ngTemplateOutlet="userTpl;context:getContext()">
+    </ng-container>
+  </span>
+  <a *ngIf="canShowAsLink" class="d-flex align-items-center user-link" [class.inherit-color]="linkInheritColor"
+      [routerLink]="['/', 'predictions', userObj.id]">
+    <ng-container *ngTemplateOutlet="userTpl;context:getContext()">
+    </ng-container>
+  </a>
+</ng-container>
+
+<ng-template #userTpl
+    let-userObj="userObj"
+    let-avatarUrl="avatarUrl"
+    let-avatarDefaultUrl="avatarDefaultUrl"
+    let-avatarSize="avatarSize"
+    let-showUsername="showUsername"
+    let-showDefault="showDefault"
+    let-avatarCssClass="avatarCssClass"
+>
+  <span *ngIf="avatarUrl || showDefault" class="avatar flex-shrink-0 {{ avatarCssClass }}">
+    <img *ngIf="avatarUrl" class="avatar-img size-{{ avatarSize }}" [src]="avatarUrl" alt="{{ userObj.username }}" />
+    <span *ngIf="!avatarUrl && showDefault" class="avatar-img size-{{ avatarSize }} fa fa-user-circle"><!-- // --></span>
+  </span>
+  <span *ngIf="!showUsername" class="username">{{ userObj.nickname ? userObj.nickname : userObj.username }}</span>
+</ng-template>

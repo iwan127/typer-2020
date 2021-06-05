@@ -1,0 +1,16 @@
+[
+{
+  "model": "match.match",
+  "pk": 1,
+  "fields": {
+    "teamHome": 1,
+    "teamAway": 32,
+    "score": null,
+    "datetime": "2018-06-14T15:00:00Z",
+    "stadium": 1,
+    "round": 1,
+    "group": 1,
+    "prediction_enabled": true
+  }
+}
+]

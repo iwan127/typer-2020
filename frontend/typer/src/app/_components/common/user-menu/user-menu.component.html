@@ -1,0 +1,9 @@
+<div ngbDropdown placement="bottom-right" class="dropdown-menu-wrapper">
+  <button type="button" class="btn btn-clear d-flex align-items-center p-0 color-white dropdown-toggler" ngbDropdownToggle>
+    <app-user [userObj]="userObj" [showAsLink]="false"></app-user>
+  </button>
+  <div ngbDropdownMenu>
+    <app-menu [menuItems]="menuItems" class="main-menu" [cssClass]="'alternative'" [marginItem]="true"
+        *ngIf="true || (userObj && userObj.isAuthenticated)"></app-menu>
+  </div>
+</div>

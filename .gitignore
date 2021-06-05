@@ -1,0 +1,58 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/frontend/typer/dist
+/frontend/typer/dist-server
+/frontend/typer/tmp
+/frontend/typer/out-tsc
+
+# dependencies
+/frontend/typer/node_modules
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.editorconfig
+.pydevproject
+/.project
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/frontend/typer/.sass-cache
+/frontend/typer/connect.lock
+/frontend/typer/coverage
+/frontend/typer/libpeerconnection.log
+/frontend/typernpm-debug.log
+/frontend/typeryarn-error.log
+/frontend/typertestem.log
+/frontend/typer/typings
+
+# e2e
+/frontend/typer/e2e/*.js
+/frontend/typer/e2e/*.map
+
+# System Files
+.DS_Store
+Thumbs.db
+
+*.pyc
+/.settings
+/.idea
+settings_local.py
+tmp
+db.db
+/wsgi
+*.swp
+/file_storage/*
+

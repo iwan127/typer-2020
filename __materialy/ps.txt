@@ -1,0 +1,12 @@
+LPkmBFHFufZnTFQhfNSf
+YvdfZLemxPHQ7mPYcPKW
+
+OhMefojai6
+
+
+jQuery('.match-teams app-team').css('width', '170px')
+jQuery('.match-teams app-team:first-child').each(function(){
+$(this).find('.avatar-img').insertAfter($(this).find('.team-name'));
+})
+jQuery('.match-teams app-team:first-child').children().addClass('justify-content-end')
+jQuery('.match-teams app-team:first-child').find('.avatar-img').addClass('ml-2').removeClass('mr-2');

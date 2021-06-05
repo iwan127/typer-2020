@@ -1,0 +1,11 @@
+@import '../utils';
+
+.card-box {
+  display: block;
+  margin: 0 auto;
+}
+.card-body {
+  .body-no-padding & {
+    padding: 0;
+  }
+}

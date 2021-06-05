@@ -1,0 +1,66 @@
+TYPER TODO:
+I FRONTEND
+v	1. zaznaczanie błędnych pól z API
+v		* logowanie
+v		* rejestracja
+v		* resetowanie hasła
+v		* resetowanie hasła - potwierdzenie
+v		* edycja profilu
+v		* zmiana hasła
+v		* zapisywanie typów
+v	2. pokazywanie komunikatów
+v		* logowanie
+v		* rejestracja
+v		* resetowanie hasła
+v		* resetowanie hasła - potwierdzenie
+v		* edycja profilu
+v		* zmiana hasła
+v		* zapisywanie typów (???)
+^	3. prawdziwa wysyłka maila
+v	4. przekierowanie po rejestracji (na logowanie lub homepage, jeśli użytkownik jest zalogowany automatycznie)
+	5. disableowanie typowania 'na żywo' - przez JS
+v	6. lista meczów - podział na grupy i fazy
+v	7. upload avatara
+v	8. flagi państw
+v	9. zapisanie wszystkich typów na raz
+v	10. prawdziwa grupa w liscie typów
+v	11. ranking
+v	12. aktualizacja id nowych typow po ich zapisaniu
+v	13. lista meczów - tabele grup
+v	14. wynik meczu na liście meczów
+v	15. strona z zasadami
+v	16. responsywność
+	17. captcha w rejestracji
+	18. pytania dodatkowe - dodawanie odpowiedzi
+	19. wyrównanie meczów na liście + wynik w środku (???)
+
+II BACKEND
+	1. poprawienie komunikatów z API
+v	2. kolejność zwracanych meczów i typów
+v	3. ranking
+v	4. upload avatara
+v	5. zliczanie punktów za typy po podaniu wyniku meczu
+v	6. pobieranie typów innych graczy
+v	7. pobieranie typów dla danego meczu
+v	8. zwracanie meczow z podzialem na fazy i grupy
+v	9. zapisanie wszystkich typów na raz
+?	10. blokowanie edycji typów po podaniu wyniku meczu
+v	11. trzeba zwracac liste nowoutworzonych typow, zeby dostac ich id
+v	12. update UserPoints po dodaniu punktów userowi
+v	13. serializacja UserPoints - żeby był cały obiekt Usera
+v	14. kolejność w rankingu przy takiej samej liczbie pkt.
+v	15. typy użytkownika - zwracać tylko niedytowalne [zrobione?]
+v	16. lista meczów - tabele grup
+v	17. strona z zasadami
+v	18. pobierać wszystkich użytkowników dla typów danego meczu (nawet tych, którzy nie typowali)
+	19. serwowanie angulara w django
+	20. captcha w rejestracji
+v	21. sprawdzić, czy uzupełnia się automatycznie nickname (czy przy rejestracji sie go nie podaje?)
+	22. pytania dodatkowe - api (put, post, get)
+	23. pytania dodatkowe - przeliczanie, blokowanie, dodawanie pkt do tabeli z pkt. usera
+	24. dodanie kolumny z punktami za pytania dodatkowe w tabeli z pkt. usera
+	25. wszyscy userzy w rankingu (bez nieaktywnych)
+	26. brak nieaktywnych userów na liście typów meczu
+
+
+^ - priorytet

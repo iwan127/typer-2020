@@ -1,0 +1,28 @@
+@import '../../../scss/utils';
+
+.prediction-error {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+}
+.submit-box {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: $blue-1;
+}
+.score-input[disabled] {
+    background: $trans;
+    border: 0 none;
+
+    &:focus,
+    &:active {
+        background: $trans;
+        border: 0 none;
+        box-shadow: none;
+    }
+}
+.match-round-info {
+    width: 45px;
+}

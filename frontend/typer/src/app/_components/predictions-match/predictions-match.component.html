@@ -1,0 +1,43 @@
+<app-card [title]="'Typy dla meczu'">
+  <div *ngIf="match" class="d-flex align-items-center justify-content-center match-info">
+    <div class="col px-0 d-flex justify-content-end">
+      <app-team [team]="match.teamHome" [avatarRight]="true" [avatarSize]="'medium'"></app-team>
+    </div>
+    <div *ngIf="match.score" class="mx-3 match-score flex-grow-0">
+      <div class="d-none d-md-block">{{ match.score.regular }}</div>
+      <div class="d-md-none"> - </div>
+    </div>
+    <div *ngIf="!match.score" class="mx-sm-3 mx-2 flex-grow-0">
+      -
+    </div>
+    <div class="col px-0 d-flex justify-content-start">
+      <app-team [team]="match.teamAway" [avatarSize]="'medium'"></app-team>
+    </div>
+  </div>
+  <div *ngIf="match.score" class="d-md-none mx-3 match-score fs-big text-center">
+    {{ match.score.regular }}
+  </div>
+  <div *ngIf="match.round" class="d-flex align-items-center justify-content-center text-center fs-medium-s">
+    <div>
+      <span>{{ match.round.name }}</span><span *ngIf="match.group">, {{ match.group.name }}</span>
+    </div>
+  </div>
+  <div class="d-flex align-items-center justify-content-center text-center fs-medium-s">
+    <div>
+      {{ match.getDatetimeString() }}<br />{{ match.getPlace() }}
+    </div>
+  </div>
+  <div *ngIf="loaded && predictions" class="predictions">
+    <div class="predictions-row p-2 d-flex align-items-center">
+      <div>Użytkownik</div>
+      <div class="predictions-score ml-auto text-center">Typ</div>
+      <div *ngIf="match.score" class="predictions-points text-center">Punkty</div>
+    </div>
+    <div *ngFor="let pr of predictions; let i=index" class="predictions-row p-2 d-flex align-items-center"
+        [class.predictions-my-user]="pr.user.id === user.id">
+      <div><app-user [userObj]="pr.user" [avatarSize]="'small'" [linkInheritColor]="true"></app-user></div>
+      <div class="predictions-score ml-auto text-center">{{ pr.goalsHome }} - {{ pr.goalsAway }}</div>
+      <div *ngIf="match.score" class="predictions-points text-center">{{ pr.points }}</div>
+    </div>
+  </div>
+</app-card>

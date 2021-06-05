@@ -1,0 +1,19 @@
+@import '../../../scss/utils';
+
+.question-label {
+    width: 100%;
+}
+@media (min-width: #{map-get($grid-breakpoints, sm)}) {
+    .custom-select:not(.single-select) {
+        width: calc(50% - .5rem);
+    }
+}
+@media (min-width: #{map-get($grid-breakpoints, md)}) {
+    .question-label {
+        width: 270px;
+    }
+    .custom-select,
+    .custom-select:not(.single-select) {
+        width: 170px;
+    }
+}

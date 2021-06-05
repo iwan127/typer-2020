@@ -1,0 +1,50 @@
+<router-outlet name='top'></router-outlet>
+
+<div *ngIf="quickMessages" class="quick-messages">
+  <ngb-alert *ngFor="let message of quickMessages" [type]="message.type" (close)="closeMessage(message)">
+    {{ message.title }}
+    <div *ngIf="message.desc">{{ message.desc }}</div>
+  </ngb-alert>
+</div>
+
+<div class="container main-message mb-4" *ngIf="messagesService.displayMainMessage">
+  <ngb-alert [type]="'info'" [dismissible]="false">
+    <div (click)="toggleMainMessage()" class="c-pointer d-flex">
+      <strong>Wyniki typera</strong>
+      <span class="fa fa-caret-down ml-auto"
+          [class.fa-caret-down]="messagesService.mainMessageTemporarilyCollapsed"
+          [class.fa-caret-up]="!messagesService.mainMessageTemporarilyCollapsed"><!-- // --></span>
+    </div>
+    <div [ngbCollapse]="messagesService.mainMessageTemporarilyCollapsed">
+      <br />
+      Z małym opóźnieniem spowodowanym moim wyjazdem i brakiem dostępu do internetu<br />
+      Z uwagi na to, że nie wszyscy zdążyli odpowiedzieć na pytania dodatkowe, nie są one wliczane do rankingu globalnego.
+      Stworzony będzie osobny ranking uwzględniający tylko te pytania<br /><br />
+      Trzeba przyznać, że rywalizacja była zacięta i walka o zwycięstwo trwała do samego końca. W międzyczasie wyniknął też jeden błą, w wyniku
+      którego nieprawidłowo były dodawane punkty za różnicę bramek (np. dla meczu Polska - Japonia z wynikiem 1-0 osoby, które
+      wytypowały wynik 0-1 dostawały 1 punkt, a, zgodnie z regulaminem, nie powinny dostać żadnego).<br /><br />
+      <strong>Lista zwycięzców:</strong><br />
+      <strong>1. marcin - 197 pkt.</strong><br />
+      <strong>2. iwan - 197 pkt.</strong><br />
+      <strong>3. zupa - 195 pkt.</strong><br /><br />
+      A oto nagrody:<br />
+      1. miejsce - wycieczka w Tatry<br />
+      2. miejsce - nieograniczony dostęp do mojego konta bankowego :)<br />
+      3. miejsce - sześciopak piwa<br /><br />
+      <strong>I jeszcze najlepsi w rankingu pytań dodatkowych:</strong><br />
+      <strong>1. monika i macko1983 - po 59 pkt.</strong><br />
+      <strong>3. marcin - 41 pkt.</strong><br /><br />
+      Nagrody dla powyższych osób zostaną ustalone i dostarczone niebawem :)<br /><br />
+      Dziękuję wszystkim za wspólną zabawę, a zwycięzcom gratuluję i zapraszam do następnej edycji Typera - już za dwa lata na EURO 2020 (na pewno Typer będzie lepiej zorganizowany)<br />
+      <i>Wojtek</i>
+    </div>
+  </ngb-alert>
+</div>
+
+<div class="container pb-3">
+  <ngb-alert *ngFor="let message of messages" [type]="message.type" (close)="closeMessage(message)">
+    {{ message.title }}
+    <div *ngIf="message.desc">{{ message.desc }}</div>
+  </ngb-alert>
+  <router-outlet></router-outlet>
+</div>

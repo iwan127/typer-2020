@@ -1,0 +1,7 @@
+<div class="card{{ cssClass ? ' ' + cssClass : '' }}">
+  <h1 *ngIf="title" class="card-header color-white">{{ title }}</h1>
+  <div class="card-body">
+    <app-spinner></app-spinner>
+    <ng-content></ng-content>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+
+<ul [class]="getUlCssClass()">
+  <li *ngFor="let item of menuItems" class="level-{{ level }}" [class.nav-item]="level === 0"
+      [class.pl-md-3]="level === 0 && cssClass !== 'alternative'"
+      [class.pl-2]="level === 0 && cssClass !== 'alternative'" [class.dropdown]="item.items"
+      [class.w-100]="cssClass === 'alternative'" [class.show]="item.expanded" routerLinkActive="active">
+    <ng-container *ngIf="!item.items">
+      <a *ngIf="item.url"
+          [routerLink]="item.url"
+          [class.px-2]="marginItem"
+          routerLinkActive="active"
+          class="nav-link d-flex align-items-center dropdown-item color-white">
+        <span *ngIf="item.icon" class="menu-item-icon {{ item.icon.library }} fa-{{ item.icon.name }} mr-1"><!-- // --></span>
+        <span>{{ item.label }}</span>
+      </a>
+      <button *ngIf="!item.url"
+          type="button"
+          [class.px-2]="marginItem"
+          (click)="item.click($event)"
+          class="w-100 c-pointer nav-link d-flex align-items-center dropdown-item color-white"
+      >
+        <span *ngIf="item.icon" class="menu-item-icon {{ item.icon.library }} fa-{{ item.icon.name }} mr-1"><!-- // --></span>
+        <span>{{ item.label }}</span>
+      </button>
+    </ng-container>
+    <ng-container *ngIf="item.items">
+      <a
+          href="#"
+          class="nav-link d-flex align-items-center dropdown-toggle dropdown-item color-white"
+          data-toggle="dropdown"
+          role="button"
+          aria-haspopup="true"
+          (click)="subMenuClick($event, item)"
+      >
+        <span *ngIf="item.icon" class="menu-item-icon {{ item.icon.library }} fa-{{ item.icon.name }} mr-1"><!-- // --></span>
+        <span>{{ item.label }}</span>
+      </a>
+      <app-menu [menuItems]="item.items" [level]="getNextLevel()" [parent]="item"></app-menu>
+    </ng-container>
+  </li>
+</ul>

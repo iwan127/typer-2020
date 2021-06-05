@@ -1,0 +1,17 @@
+@import '../../../../scss/utils';
+
+.navbar-fix {
+    height: 70px;
+}
+
+.navbar-brand {
+    padding: 0;
+    font-family: 'Dusha';
+    line-height: 1.2rem;
+    text-align: center;
+}
+
+.brand-main {
+    display: block;
+    font-size: get-fs('xlarge-s');
+}

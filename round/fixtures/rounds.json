@@ -1,0 +1,42 @@
+[
+{
+  "model": "round.round",
+  "pk": 1,
+  "fields": {
+    "name": "Faza grupowa",
+    "roundType": 1
+  }
+},
+{
+  "model": "round.round",
+  "pk": 2,
+  "fields": {
+    "name": "1/8 fina\u0142u",
+    "roundType": 2
+  }
+},
+{
+  "model": "round.round",
+  "pk": 3,
+  "fields": {
+    "name": "\u0106wier\u0107fina\u0142",
+    "roundType": 3
+  }
+},
+{
+  "model": "round.round",
+  "pk": 4,
+  "fields": {
+    "name": "P\u00f3\u0142fina\u0142",
+    "roundType": 4
+  }
+},
+{
+  "model": "round.round",
+  "pk": 5,
+  "fields": {
+    "name": "Fina\u0142",
+    "roundType": 5
+  }
+}
+]

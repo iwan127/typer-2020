@@ -1,0 +1,43 @@
+<app-card [title]="title" [cssClass]="'mb-5'">
+
+  <ng-container *ngIf="loaded">
+    <form #form="ngForm" (ngSubmit)="savePredictions()">
+      <div *ngFor="let eq of extraQuestions; let i=index;">
+        <ng-container *ngTemplateOutlet="answersForm;context:getContext(eq, i)">
+        </ng-container>
+      </div>
+      <div *ngIf="showSubmitButton()" class="submit-box py-2 text-center">
+        <button type="submit" class="btn btn-sm btn-success px-4">Zapisz</button>
+      </div>
+    </form>
+  </ng-container>
+
+  <ng-template #answersForm let-answer="answer" let-index="index" let-question="question">
+    <div>
+      <div class="form-group form-group-h no-gutters row align-items-center p-2 mb-1 flex-md-row flex-column"
+          [class.form-group-bg]="index % 2 == 1">
+        <div class="d-md-flex align-items-center w-100">
+          <label class="d-block text-md-nowrap question-label flex-shrink-0 mb-md-0 pr-md-3">{{ question.text }}</label>
+          <select *ngIf="!question.isMultiple()" [(ngModel)]="answer.answer0" (ngModelChange)="answerChanged(answer)"
+              class="custom-select single-select"
+              [attr.disabled]="!answer.editable || !question.answerEnabled ? 'disabled' : null"
+              [attr.readonly]="!answer.editable || !question.answerEnabled ? 'readonly' : null">
+            <option *ngFor="let opt of question.possibleAnswers" [ngValue]="opt.id">{{ opt.name }}</option>
+          </select>
+          <select *ngIf="question.isMultiple()" [(ngModel)]="answer.answer1" (ngModelChange)="answerChanged(answer)"
+              class="custom-select mb-2 mb-sm-0 mr-sm-2"
+              [attr.disabled]="!answer.editable || !question.answerEnabled ? 'disabled' : null"
+              [attr.readonly]="!answer.editable || !question.answerEnabled ? 'readonly' : null">
+            <option *ngFor="let opt of question.possibleAnswers" [ngValue]="opt.id">{{ opt.name }}</option>
+          </select>
+          <select *ngIf="question.isMultiple()" [(ngModel)]="answer.answer2" (ngModelChange)="answerChanged(answer)"
+              class="custom-select ml-sm-2"
+              [attr.disabled]="!answer.editable || !question.answerEnabled ? 'disabled' : null"
+              [attr.readonly]="!answer.editable || !question.answerEnabled ? 'readonly' : null">
+            <option *ngFor="let opt of question.possibleAnswers" [ngValue]="opt.id">{{ opt.name }}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</app-card>

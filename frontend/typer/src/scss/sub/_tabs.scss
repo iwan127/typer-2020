@@ -1,0 +1,9 @@
+@import '../utils';
+
+.tabs-indent .nav-tabs {
+  padding-left: $card-spacer-x;
+  padding-right: $card-spacer-x;
+}
+.nav-tabs .nav-link.disabled {
+  cursor: not-allowed;
+}

@@ -1,0 +1,98 @@
+[
+{
+  "model": "places.stadium",
+  "pk": 1,
+  "fields": {
+    "name": "Stadion \u0141u\u017cniki",
+    "city": "Moskwa"
+  }
+},
+{
+  "model": "places.stadium",
+  "pk": 2,
+  "fields": {
+    "name": "Otkrytije Arena",
+    "city": "Moskwa"
+  }
+},
+{
+  "model": "places.stadium",
+  "pk": 3,
+  "fields": {
+    "name": "Stadion Kriestowskij",
+    "city": "Petersburg"
+  }
+},
+{
+  "model": "places.stadium",
+  "pk": 4,
+  "fields": {
+    "name": "Stadion Kaliningrad",
+    "city": "Kaliningrad"
+  }
+},
+{
+  "model": "places.stadium",
+  "pk": 5,
+  "fields": {
+    "name": "Kaza\u0144 Arena",
+    "city": "Kaza\u0144"
+  }
+},
+{
+  "model": "places.stadium",
+  "pk": 6,
+  "fields": {
+    "name": "Ni\u017cny Nowogr\u00f3d",
+    "city": "Stadion Strie\u0142ka"
+  }
+},
+{
+  "model": "places.stadium",
+  "pk": 7,
+  "fields": {
+    "name": "Samara Arena",
+    "city": "Samara"
+  }
+},
+{
+  "model": "places.stadium",
+  "pk": 8,
+  "fields": {
+    "name": "Wo\u0142gograd Arena",
+    "city": "Wo\u0142gograd"
+  }
+},
+{
+  "model": "places.stadium",
+  "pk": 9,
+  "fields": {
+    "name": "Mordowija Arena",
+    "city": "Sara\u0144sk"
+  }
+},
+{
+  "model": "places.stadium",
+  "pk": 10,
+  "fields": {
+    "name": "Rostow Arena",
+    "city": "Rost\u00f3w nad Donem"
+  }
+},
+{
+  "model": "places.stadium",
+  "pk": 11,
+  "fields": {
+    "name": "Stadion Olimpijski",
+    "city": "Soczi"
+  }
+},
+{
+  "model": "places.stadium",
+  "pk": 12,
+  "fields": {
+    "name": "Stadion Centralny",
+    "city": "Jekaterynburg"
+  }
+}
+]

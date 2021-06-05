@@ -1,0 +1,20 @@
+<div *ngIf="showTable()" class="group-table fs-medium-s">
+  <div class="group-table-header p-2 d-flex align-items-center justify-content-end font-weight-bold">
+    <div class="group-table-no mr-auto text-center flex-grow-0 flex-shrink-0">#</div>
+    <div class="flex-fill">Drużyna</div>
+    <div class="group-table-points text-center flex-grow-0 flex-shrink-0"><span class="d-md-block d-none">Mecze</span><span class="d-md-none">M</span></div>
+    <div class="group-table-goals text-center flex-grow-0 flex-shrink-0"><span class="d-md-block d-none">Gole strzelone</span><span class="d-md-none">G+</span></div>
+    <div class="group-table-goals text-center flex-grow-0 flex-shrink-0"><span class="d-md-block d-none">Gole stracone</span><span class="d-md-none">G-</span></div>
+    <div class="group-table-goals-diff text-center flex-grow-0 flex-shrink-0"><span class="d-md-block d-none">Bilans</span><span class="d-md-none">+/-</span></div>
+    <div class="group-table-points text-center flex-grow-0 flex-shrink-0"><span class="d-md-block d-none">Punkty</span><span class="d-md-none">Pkt</span></div>
+  </div>
+  <div *ngFor="let team of groupDetails.teams; let i=index" class="group-table-row p-2 d-flex align-items-center justify-content-end">
+    <div class="group-table-no mr-auto text-center flex-grow-0 flex-shrink-0">{{ team.position | default : (i + 1) }}</div>
+    <div class="flex-fill"><app-team [team]="team.team"></app-team></div>
+    <div class="group-table-points text-center flex-grow-0 flex-shrink-0">{{ team.matches | default : '-' }}</div>
+    <div class="group-table-goals text-center flex-grow-0 flex-shrink-0">{{ team.goalsScored | default : '-' }}</div>
+    <div class="group-table-goals text-center flex-grow-0 flex-shrink-0">{{ team.goalsConceded | default : '-' }}</div>
+    <div class="group-table-goals-diff text-center flex-grow-0 flex-shrink-0">{{ getGoalsDiff(team) | default : '-' }}</div>
+    <div class="group-table-points text-center flex-grow-0 flex-shrink-0">{{ team.points | default : '-' }}</div>
+  </div>
+</div>

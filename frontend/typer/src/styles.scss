@@ -1,0 +1,18 @@
+@import './scss/utils';
+// @import '../node_modules/font-awesome/scss/font-awesome';
+@import '../node_modules/@fortawesome/fontawesome-free-webfonts/scss/fa-brands';
+@import '../node_modules/@fortawesome/fontawesome-free-webfonts/scss/fa-regular';
+@import '../node_modules/@fortawesome/fontawesome-free-webfonts/scss/fa-solid';
+@import '../node_modules/@fortawesome/fontawesome-free-webfonts/scss/fontawesome';
+
+@import './scss/sub/utils';
+@import './scss/sub/button';
+@import './scss/sub/form';
+@import './scss/sub/card';
+@import './scss/sub/tabs';
+@import './scss/sub/user';
+@import './scss/sub/alerts';
+
+@import './scss/bootstrap';
+
+@import './scss/theme';

@@ -1,0 +1,45 @@
+<app-card [title]="'Rejestracja'" class="card-box mxw-400">
+  <form *ngIf="!submitted" (ngSubmit)="submit()">
+    <div class="form-group">
+      <label for="email">Adres email</label>
+      <input type="email" class="form-control" [class.is-invalid]="fieldHasError('email')" id="email"
+          name="email" placeholder="Adres email" [(ngModel)]="email" required="required" />
+      <div *ngIf="fieldHasError('email')" class="invalid-feedback">
+        {{ getFieldError('email') }}
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="username">Login</label>
+      <input type="text" class="form-control" [class.is-invalid]="fieldHasError('username')" id="username"
+          name="username" placeholder="Login" [(ngModel)]="username" required="required" />
+      <div *ngIf="fieldHasError('username')" class="invalid-feedback">
+        {{ getFieldError('username') }}
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Hasło</label>
+      <input type="password" class="form-control" [class.is-invalid]="fieldHasError('password1')" id="password"
+          name="password" placeholder="Hasło" [(ngModel)]="password" required="required" />
+      <div *ngIf="fieldHasError('password1')" class="invalid-feedback">
+        {{ getFieldError('password1') }}
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password2">Powtórz hasło</label>
+      <input type="password" class="form-control" [class.is-invalid]="fieldHasError('password2')" id="password2"
+          name="password2" placeholder="Powtórz hasło" [(ngModel)]="password2" required="required" />
+      <div *ngIf="fieldHasError('password2')" class="invalid-feedback">
+        {{ getFieldError('password2') }}
+      </div>
+    </div>
+    <div>
+      <input type="submit" value="Zarejestruj się" class="btn btn-primary btn-sm" />
+    </div>
+  </form>
+  <div *ngIf="submitted">
+    Rejestracja powiodła się. Na podany adres email wysłany został link aktywacyjny.
+  </div>
+  <div class="pt-3 fs-medium-s">
+    <div>Masz już konto? <a [routerLink]="['/', 'login']">Zaloguj się.</a></div>
+  </div>
+</app-card>

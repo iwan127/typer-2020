@@ -1,0 +1,51 @@
+@import '../../../scss/utils';
+
+.group-table-header {
+    background-color: $blue-6;
+}
+.group-table-row {
+    &:nth-child(odd) {
+        background-color: rgba($gray-2, .25);
+    }
+}
+.group-table-no {
+    width: 20px;
+}
+.group-table-points,
+.group-table-goals,
+.group-table-goals-diff {
+    width: 30px;
+}
+
+@media (min-width: #{map-get($grid-breakpoints, sm)}) {
+    .group-table-no {
+        width: 30px;
+    }
+    .group-table-points,
+    .group-table-goals,
+    .group-table-goals-diff {
+        width: 50px;
+    }
+}
+@media (min-width: #{map-get($grid-breakpoints, md)}) {
+    .group-table-points {
+        width: 60px;
+    }
+    .group-table-goals {
+        width: 120px;
+    }
+    .group-table-goals-diff {
+        width: 60px;
+    }
+}
+@media (min-width: #{map-get($grid-breakpoints, lg)}) {
+    .group-table-points {
+        width: 60px;
+    }
+    .group-table-goals {
+        width: 150px;
+    }
+    .group-table-goals-diff {
+        width: 70px;
+    }
+}

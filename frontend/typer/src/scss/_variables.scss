@@ -1,0 +1,132 @@
+// SCIEZKI
+$font-path:   './fonts';
+// $fa-font-path: '../node_modules/font-awesome/fonts';
+$fa-font-path: '../node_modules/@fortawesome/fontawesome-free-webfonts/webfonts';
+$assets: '../../assets/';
+// KOLORY
+$trans: transparent;
+$white: #fff;
+$black: #000;
+$blue-1: #0f3f79; // tlo
+$blue-2: #1f7ba1;
+$blue-3: #041e4d;
+$blue-4: #77a9e7; // tlo
+$blue-5: #bfd2e7; // tlo
+$blue-6: rgba($blue-1, .3);
+$gray-1: #343a40; // tlo headera
+$gray-2: #aaa8ae; // kolor naglowkow tabeli
+$green-1: #5fab16; // kolor 'success'
+$orange-1: #e28b09; // kolor 'warning'
+$red-1: #b40107; // kolor główny
+$red-2: #eb0b0b; // kolor 'error'
+
+// CZCIONKI
+$fs-base: 16px;
+$font-sizes-list: (
+  'small-s': .5rem, // 8px
+  'small': .63rem, // 10px
+  'small-l': .75rem, // 12px
+  'medium-s': .88rem, // 14px
+  'medium': 1rem, // 16px
+  'medium-l': 1.13rem, // 18px
+  'big-s': 1.25rem, // 20px
+  'big': 1.38rem, // 22px
+  'big-l': 1.5rem, // 24px
+  'large-s': 1.66rem, // 26px
+  'large': 1.75rem, // 28px
+  'large-l': 1.88rem, // 30px
+  'xlarge-s': 2rem, // 32px
+  'xlarge': 2.13rem, // 34px
+  'xlarge-l': 2.25rem, // 36px
+  'xxlarge-s': 2.38rem, // 38px
+  'xxlarge': 2.5rem, // 40px
+  'xxlarge-l': 2.63rem // 42px
+);
+
+$container-padding: 1rem;
+
+// BOOTSTRAP
+$container-max-widths: (
+  sm: 100%,
+  md: 100%,
+  lg: 960px,
+  xl: 1140px
+);
+
+$font-family-sans-serif: 'Lato', sans-serif;
+$body-color: $white;
+$body-bg: $blue-1;
+$link-color: $white;
+
+$primary:       $red-1;
+$secondary:     $blue-1;
+$success:       $green-1;
+$info:          $blue-4;
+$warning:       $orange-1;
+$danger:        $red-2;
+$light:         $blue-4;
+$dark:          $blue-3;
+
+$navbar-dark-color: $white;
+$navbar-dark-hover-color: $white;
+
+$link-color: $blue-1;
+$link-hover-color: $red-1;
+$link-hover-decoration: none;
+
+$border-radius: 10px;
+
+$h1-font-size: map-get($font-sizes-list, 'big');
+
+$card-border-width: 0;
+$card-cap-bg: $red-1;
+
+$card-inner-border-radius: $border-radius;
+
+$input-padding-y: .2rem;
+$input-padding-x: .4rem;
+
+$nav-tabs-border-width: 0;
+$nav-link-disabled-color: $gray-2;
+$nav-tabs-link-active-bg: rgba($blue-1, .75);
+$nav-tabs-link-active-color: $white;
+$nav-tabs-border-radius: 0;
+
+/*
+$input-disabled-bg: $blue-3;
+
+$text-muted: $gray-2;
+$border-radius: 0;
+$border-radius-lg: $border-radius;
+$border-radius-sm: $border-radius;
+$dropdown-border-radius: 0 0 .4rem .4rem;
+$dropdown-bg: $gray-1;
+$dropdown-divider-bg: $gray-2;
+$dropdown-link-color: $body-color;
+$dropdown-link-hover-color: $body-color;
+$dropdown-link-hover-bg: lighten($gray-1, 25%);
+$dropdown-header-color: $gray-2;
+$dropdown-link-active-bg: $dropdown-link-hover-bg;
+
+$h1-font-size: 2rem;
+$h2-font-size: 1.4rem;
+$h3-font-size: 1.2rem;
+$h4-font-size: 1rem;
+$h5-font-size: .8rem;
+$h6-font-size: .6rem;
+
+$card-bg: $blue-2;
+$card-border-radius: .625rem;
+
+$list-group-bg: $trans;
+$list-group-border-color: $blue-3;
+$list-group-action-color: $gray-2;
+$list-group-hover-bg: $blue-3;
+//$list-group-action-hover-color: $blue-3;
+$list-group-item-padding-y: 0;
+$list-group-item-padding-x: 0;
+
+$table-dark-bg: $trans;
+$table-dark-color: $white;
+$table-border-width: 0;
+*/

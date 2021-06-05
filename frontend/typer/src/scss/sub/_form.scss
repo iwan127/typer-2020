@@ -1,0 +1,30 @@
+@import '../utils';
+
+.form-control.score-input {
+  width: 50px;
+  border-color: rgba($blue-1, .5);
+  text-align: center;
+}
+.form-group-h {
+  &:hover {
+    background-color: rgba($blue-1, .25);
+  }
+  &.form-group-bg {
+    background-color: rgba($blue-1, .13);
+
+    &:hover {
+      background-color: rgba($blue-1, .25);
+    }
+  }
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+}

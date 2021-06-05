@@ -1,0 +1,38 @@
+<app-card [title]="title" [cssClass]="'mb-5'">
+
+  <ng-container *ngIf="loaded">
+    <div *ngFor="let eq of extraQuestions; let i=index;">
+      <ng-container *ngTemplateOutlet="answersForm;context:getContext(eq, i)">
+      </ng-container>
+    </div>
+  </ng-container>
+
+  <ng-template #answersForm let-answers="answers" let-index="index" let-question="question">
+    <div>
+      <div class="p-2 mb-1">
+        <div>
+          <div><label class="d-block text-md-nowrap bg-blue color-white text-center p-1 mb-1">{{ question.text }}</label></div>
+          <div *ngFor="let answer of answers; let i=index" class="d-md-flex align-items-center w-100 p-2 form-group-h" [class.form-group-bg]="i % 2 === 0">
+            <span class="col-md-2"><app-user [userObj]="answer.user" [avatarSize]="'small'" [linkInheritColor]="true"></app-user></span>
+            <div *ngIf="!question.isMultiple()" class="flex-fill">
+              <ng-container *ngTemplateOutlet="answerTmpl;context:getAnswerContext(answer.answer0, question)"></ng-container>
+            </div>
+            <div *ngIf="question.isMultiple()" class="flex-fill">
+              <span *ngIf="answer.hasAnswer()">
+                <ng-container *ngTemplateOutlet="answerTmpl;context:getAnswerContext(answer.answer1, question)"></ng-container>
+                &nbsp;-&nbsp;
+                <ng-container *ngTemplateOutlet="answerTmpl;context:getAnswerContext(answer.answer2, question)"></ng-container>
+              </span>
+              <span *ngIf="!answer.hasAnswer()">brak odpowiedzi</span>
+            </div>
+            <div class="ml-auto">{{ answer.points | default : 0 }} pkt</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template #answerTmpl let-answer="answer">
+    <span *ngIf="answer">{{ answer.name }}</span>
+  </ng-template>
+</app-card>

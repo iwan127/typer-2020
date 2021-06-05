@@ -1,0 +1,61 @@
+<app-card [title]="'Ustawienia konta'">
+  <ng-container *ngIf="loaded">
+    <form #form="ngForm" class="row" (ngSubmit)="submit()" enctype="multipart/form-data">
+      <div class="col-12 col-md-6">
+        <div class="form-group row">
+          <label class="col-4 col-form-label" for="nickname">Login</label>
+          <div class="col">
+            <input type="text" class="form-control"  id="username"
+                name="username" [ngModel]="userObj.username" disabled="disabled" />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-4 col-form-label" for="email">Email</label>
+          <div class="col">
+            <input type="text" class="form-control" [class.is-invalid]="fieldHasError('email')" id="email"
+                name="email" [(ngModel)]="userObj.email" required="required" />
+            <div *ngIf="fieldHasError('email')" class="invalid-feedback">
+              {{ getFieldError('email') }}
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-4 col-form-label" for="nickname">Nazwa wyświetlana</label>
+          <div class="col">
+            <input type="text" class="form-control" [class.is-invalid]="fieldHasError('nickname')" id="nickname"
+                name="nickname" max="128" [(ngModel)]="userObj.nickname" required="required" />
+            <div *ngIf="fieldHasError('nickname')" class="invalid-feedback">
+              {{ getFieldError('nickname') }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="form-group">
+          <div>
+            <label for="avatar">Avatar</label>
+          </div>
+          <div *ngIf="userObj.avatar || avatarTempUrl" class="mb-2">
+            <app-user [userObj]="userObj" [showDefault]="false" [showUsername]="true" [avatarSize]="'big'"
+                [avatarCssClass]="mb-3" [avatarNewUrl]="avatarTempUrl"></app-user>
+          </div>
+          <div class="clearfix">
+            <div class="position-relative float-left mr-2">
+              <input type="file" class="form-control c-pointer position-absolute h-100 avatar-input" [class.is-invalid]="fieldHasError('avatar')"
+                  id="avatar" name="avatar" [(ngModel)]="userObj.avatarFile" #avatarBrowser (change)="afterAvatarChanged()" />
+              <div *ngIf="fieldHasError('avatar')" class="invalid-feedback">
+                {{ getFieldError('avatar') }}
+              </div>
+              <button type="button" class="btn btn-info btn-sm h-100 position-relative avatar-btn">{{ getAvatarUploadLabel() }}</button>
+            </div>
+            <button *ngIf="userObj.avatar || avatarTempUrl" type="button" class="btn btn-danger btn-sm float-left" (click)="removeAvatar()">Usuń</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <input type="submit" value="Zapisz" class="btn btn-primary btn-sm" [disabled]="submitEnabled(form)" />
+        <a [routerLink]="['change-password']" class="btn btn-sm btn-secondary ml-2">Zmień hasło</a>
+      </div>
+    </form>
+  </ng-container>
+</app-card>

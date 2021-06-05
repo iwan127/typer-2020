@@ -1,0 +1,18 @@
+@import '../../../scss/utils';
+
+.rank-row {
+    &:nth-child(even) {
+        background-color: rgba($gray-2, .25);
+    }
+}
+.rank-no {
+    width: 30px;
+}
+.rank-points {
+    width: 60px;
+}
+.rank-my-user {
+    color: $red-1;
+    // background-color: $blue-6;
+    font-weight: 700;
+}

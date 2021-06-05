@@ -1,0 +1,29 @@
+@import '../../../scss/utils';
+
+.match-container {
+    padding: $card-spacer-y $card-spacer-x;
+}
+// .match-list {
+//     padding: $card-spacer-y $card-spacer-x;
+// }
+.match-box {
+    border-bottom: 1px solid $blue-1;
+}
+.match-info {
+    width: 100%;
+}
+
+@media (min-width: #{map-get($grid-breakpoints, md)}) {
+    .match-info {
+        width: 220px;
+    }
+}
+
+.match-teams {
+    font-size: get-fs('medium-s');
+}
+@media (min-width: #{map-get($grid-breakpoints, sm)}) {
+    .match-teams {
+        font-size: get-fs('medium');
+    }
+}

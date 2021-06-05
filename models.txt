@@ -1,0 +1,57 @@
+team
+	name
+	shortname
+	logo
+
+stadium
+	name
+	city
+
+match
+	teamHome (FK -> team)
+	teamAway	(FK -> team)
+	score(OTO -> score)
+	datetime
+	stadium (FK -> stadium)
+	
+score
+	regular
+	aet
+	penalty
+	regular_home
+	regular_away
+	aet_home
+	aet_away
+	penalty_home
+	penalty_away
+	winner (1 | 2 | 0)
+
+user
+	username
+	email
+	password
+	avatar
+
+prediction
+	user (FK -> user)
+	match (FK -> match)
+	goals_home
+	goals_away
+	points
+
+points
+	rule (TUPLE)
+	points
+
+userPoints
+	user (FK -> user)
+	points
+
+group
+	teams (MTM -> group_team -> team)
+
+round
+	name
+	roundType (TUPLE)
+	matches (integer)
+	

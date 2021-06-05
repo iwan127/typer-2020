@@ -1,0 +1,102 @@
+@import './scss/utils';
+
+.color-white {
+  color: $white;
+}
+.medium-width {
+  max-width: 310px;
+}
+.full-height-wrapper {
+  display: flex;
+}
+.full-height {
+  min-height: 100%;
+  flex: 1;
+}
+.w-1 {
+  width: 1%;
+}
+.mxw-400 {
+  max-width: 400px;
+}
+.content-box {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.flex-right {
+  margin-left: auto;
+}
+.flex-left {
+  margin-right: auto;
+}
+.c-pointer {
+  cursor: pointer;
+}
+@each $key, $fs in $font-sizes-list {
+  .fs-#{$key} {
+    font-size: $fs;
+  }
+}
+.color-white {
+  color: $white;
+}
+.color-gray {
+  color: $gray-1;
+}
+.color-red {
+  color: $red-1;
+}
+.color-blue {
+  color: $blue-1;
+}
+.inherit-color {
+  color: inherit;
+}
+.bg-blue {
+  background-color: $blue-1;
+}
+.bg-green {
+  background-color: $green-1;
+}
+.bg-red {
+  background-color: $red-2;
+}
+
+
+.animate-bounce {
+  animation: bounce .75s infinite ease-in-out;
+}
+.animate-bounce-off {
+  animation: bounce-off 2s 1 ease-in;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0) rotate(0deg);;
+  }
+
+  50% {
+    transform: translateY(-60px) rotate(72deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(144deg);
+  }
+}
+
+@keyframes bounce-off {
+  0% {
+    opacity: 0;
+    transform: translateY(0) rotate(0deg);
+  }
+
+  1% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(-10000px) rotate(360deg);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,86 @@
+@import 'variables';
+
+@mixin load-font-face($f-name-pretty, $f-types) {
+  @each $f-type in $f-types {
+    $f-name: to_lower_case($f-name-pretty);
+    $f-weight: 400;
+    $f-style: normal;
+
+    @if $f-type == 'italic' {
+      $f-weight: 400;
+      $f-style: italic;
+    } @else if $f-type == 'medium' {
+      $f-weight: 500;
+      $f-style: normal;
+    } @else if $f-type == 'mediumitalic' {
+      $f-weight: 500;
+      $f-style: italic;
+    } @else if $f-type == 'bold' {
+      $f-weight: 700;
+      $f-style: normal;
+    } @else if $f-type == 'bolditalic' {
+      $f-weight: 700;
+      $f-style: italic;
+    } @else {
+      $f-weight: 400;
+      $f-style: normal;
+    }
+
+    @font-face {
+      font-family: $f-name-pretty;
+      src: url('#{$font-path}/#{$f-name}/#{$f-name}-#{$f-type}-webfont.eot');
+      src: url('#{$font-path}/#{$f-name}/#{$f-name}-#{$f-type}-webfont.eot?#iefix') format('embedded-opentype'),
+      url('#{$font-path}/#{$f-name}/#{$f-name}-#{$f-type}-webfont.woff') format('woff');
+      font-weight: $f-weight;
+      font-style: $f-style;
+    }
+  }
+}
+
+@function add-opacity($color, $opacity) {
+  @return rgba($color, $opacity);
+}
+
+@mixin animate {
+  transition: all .5s;
+}
+
+@mixin center-v {
+  transform: translateY(-50%);
+}
+
+@mixin bg-cover {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+@mixin set-bg($img) {
+  background-image: url('#{$img}');
+  @include bg-cover;
+}
+
+@function assets-path($nesting-level: 3) {
+  $path: 'assets/';
+  @if $nesting-level == 0 {
+    @return './' + $path;
+  } @else {
+    @for $i from 1 through $nesting-level {
+      $path: '../' + $path;
+    }
+    @debug "$path is #{$path}";
+    @return $path;
+  }
+}
+
+@mixin icon($img, $nesting-level: 3){
+  $assets: assets-path($nesting-level);
+  @include set-bg('#{$assets}#{$img}');
+  background-position: 50% 100%;
+  height: 110px;
+  width: 110px;
+  margin: 0 auto;
+}
+
+@function get-fs($fs) {
+  @return map-get($font-sizes-list, $fs);
+}

@@ -1,0 +1,30 @@
+@import '../../../scss/utils';
+
+.predictions-row {
+    &:nth-child(even) {
+        background-color: rgba($gray-2, .25);
+    }
+}
+.predictions-score {
+    width: 70px;
+}
+.predictions-points {
+    width: 60px;
+}
+.predictions-my-user {
+    color: $red-1;
+    // background-color: $blue-6;
+    font-weight: 700;
+}
+.match-score {
+    letter-spacing: .25em;
+}
+.match-info {
+    font-size: get-fs('medium');
+}
+
+@media (min-width: #{map-get($grid-breakpoints, sm)}) {
+    .match-info {
+        font-size: get-fs('big');
+    }
+}

@@ -1,0 +1,15 @@
+@import '../../../scss/utils';
+
+.avatar-img {
+    border: 1px solid $blue-6;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    
+    &.vertical {
+        background-size: 100% auto;
+        background-repeat: repeat-y;
+    }
+}
+.team-name {
+    margin-top: .2rem;
+}

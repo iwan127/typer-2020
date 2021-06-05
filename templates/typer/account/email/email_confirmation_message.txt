@@ -1,0 +1,6 @@
+{% load account %}{% user_display user as user_display %}{% load i18n %}{% autoescape off %}{% blocktrans with site_name=current_site.name site_domain=current_site.domain %}
+Witaj w systemie {{ site_name }}!
+
+Rejestracja dobiegla konca. Od teraz mozesz typowac wyniki meczow pod adresem:
+{{ site_domain }}
+{% endblocktrans %}{% endautoescape %}

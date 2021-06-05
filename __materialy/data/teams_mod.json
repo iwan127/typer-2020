@@ -1,0 +1,290 @@
+[
+	{
+	  "model": "team.team",
+	  "fields": {
+		"name": "Anglia",
+		"shortname": "ENG",
+		"logo": "teams/eng.svg",
+		"vertical_logo": false
+	  }
+	},
+	{
+	  "model": "team.team",
+	  "fields": {
+		"name": "Arabia Saudyjska",
+		"shortname": "SAU",
+		"logo": "teams/sau.svg",
+		"vertical_logo": false
+	  }
+	},
+	{
+	  "model": "team.team",
+	  "fields": {
+		"name": "Argentyna",
+		"shortname": "ARG",
+		"logo": "teams/arg.svg",
+		"vertical_logo": false
+	  }
+	},
+	{
+	  "model": "team.team",
+	  "fields": {
+		"name": "Australia",
+		"shortname": "AUT",
+		"logo": "teams/aut.svg",
+		"vertical_logo": false
+	  }
+	},
+	{
+	  "model": "team.team",
+	  "fields": {
+		"name": "Belgia",
+		"shortname": "BEL",
+		"logo": "teams/bel.svg",
+		"vertical_logo": true
+	  }
+	},
+	{
+	  "model": "team.team",
+	  "fields": {
+		"name": "Brazylia",
+		"shortname": "BRA",
+		"logo": "teams/bra.svg",
+		"vertical_logo": false
+	  }
+	},
+	{
+	  "model": "team.team",
+	  "fields": {
+		"name": "Chorwacja",
+		"shortname": "HRV",
+		"logo": "teams/hrv.svg",
+		"vertical_logo": false
+	  }
+	},
+	{
+	  "model": "team.team",
+	  "fields": {
+		"name": "Dania",
+		"shortname": "DNK",
+		"logo": "teams/dnk.svg",
+		"vertical_logo": false
+	  }
+	},
+	{
+	  "model": "team.team",
+	  "fields": {
+		"name": "Egipt",
+		"shortname": "EGY",
+		"logo": "teams/egy.svg",
+		"vertical_logo": false
+	  }
+	},
+	{
+	  "model": "team.team",
+	  "fields": {
+		"name": "Francja",
+		"shortname": "FRA",
+		"logo": "teams/fra.svg",
+		"vertical_logo": true
+	  }
+	},
+	{
+	  "model": "team.team",
+	  "fields": {
+		"name": "Hiszpania",
+		"shortname": "ESP",
+		"logo": "teams/esp.svg",
+		"vertical_logo": false
+	  }
+	},
+	{
+	  "model": "team.team",
+	  "fields": {
+		"name": "Iran",
+		"shortname": "IRN",
+		"logo": "teams/irn.svg",
+		"vertical_logo": false
+	  }
+	},
+	{
+	  "model": "team.team",
+	  "fields": {
+		"name": "Islandia",
+		"shortname": "ISL",
+		"logo": "teams/isl.svg",
+		"vertical_logo": false
+	  }
+	},
+	{
+	  "model": "team.team",
+	  "fields": {
+		"name": "Japonia",
+		"shortname": "JPN",
+		"logo": "teams/jpn.svg",
+		"vertical_logo": false
+	  }
+	},
+	{
+	  "model": "team.team",
+	  "fields": {
+		"name": "Kolumbia",
+		"shortname": "COL",
+		"logo": "teams/col.svg",
+		"vertical_logo": false
+	  }
+	},
+	{
+	  "model": "team.team",
+	  "fields": {
+		"name": "Korea Po\u0142udniowa",
+		"shortname": "KOR",
+		"logo": "teams/kor.svg",
+		"vertical_logo": false
+	  }
+	},
+	{
+	  "model": "team.team",
+	  "fields": {
+		"name": "Kostaryka",
+		"shortname": "CRI",
+		"logo": "teams/cri.svg",
+		"vertical_logo": false
+	  }
+	},
+	{
+	  "model": "team.team",
+	  "fields": {
+		"name": "Maroko",
+		"shortname": "MAR",
+		"logo": "teams/mar.svg",
+		"vertical_logo": false
+	  }
+	},
+	{
+	  "model": "team.team",
+	  "fields": {
+		"name": "Meksyk",
+		"shortname": "MEX",
+		"logo": "teams/mex.svg",
+		"vertical_logo": false
+	  }
+	},
+	{
+	  "model": "team.team",
+	  "fields": {
+		"name": "Niemcy",
+		"shortname": "DEU",
+		"logo": "teams/deu.svg",
+		"vertical_logo": false
+	  }
+	},
+	{
+	  "model": "team.team",
+	  "fields": {
+		"name": "Nigeria",
+		"shortname": "NGA",
+		"logo": "teams/nga.svg",
+		"vertical_logo": true
+	  }
+	},
+	{
+	  "model": "team.team",
+	  "fields": {
+		"name": "Panama",
+		"shortname": "PAN",
+		"logo": "teams/pan.svg",
+		"vertical_logo": false
+	  }
+	},
+	{
+	  "model": "team.team",
+	  "fields": {
+		"name": "Peru",
+		"shortname": "PER",
+		"logo": "teams/per.svg",
+		"vertical_logo": true
+	  }
+	},
+	{
+	  "model": "team.team",
+	  "fields": {
+		"name": "Polska",
+		"shortname": "POL",
+		"logo": "teams/pol.svg",
+		"vertical_logo": false
+	  }
+	},
+	{
+	  "model": "team.team",
+	  "fields": {
+		"name": "Portugalia",
+		"shortname": "PRT",
+		"logo": "teams/prt.svg",
+		"vertical_logo": false
+	  }
+	},
+	{
+	  "model": "team.team",
+	  "fields": {
+		"name": "Rosja",
+		"shortname": "RUS",
+		"logo": "teams/rus.svg",
+		"vertical_logo": false
+	  }
+	},
+	{
+	  "model": "team.team",
+	  "fields": {
+		"name": "Senegal",
+		"shortname": "SEN",
+		"logo": "teams/sen.svg",
+		"vertical_logo": false
+	  }
+	},
+	{
+	  "model": "team.team",
+	  "fields": {
+		"name": "Serbia",
+		"shortname": "SRB",
+		"logo": "teams/srb.svg",
+		"vertical_logo": false
+	  }
+	},
+	{
+	  "model": "team.team",
+	  "fields": {
+		"name": "Szwajcaria",
+		"shortname": "CHE",
+		"logo": "teams/che.svg",
+		"vertical_logo": false
+	  }
+	},
+	{
+	  "model": "team.team",
+	  "fields": {
+		"name": "Szwecja",
+		"shortname": "SWE",
+		"logo": "teams/swe.svg",
+		"vertical_logo": false
+	  }
+	},
+	{
+	  "model": "team.team",
+	  "fields": {
+		"name": "Tunezja",
+		"shortname": "TUN",
+		"logo": "teams/tun.svg",
+		"vertical_logo": false
+	  }
+	},
+	{
+	  "model": "team.team",
+	  "fields": {
+		"name": "Urugwaj",
+		"shortname": "URY",
+		"logo": "teams/ury.svg",
+		"vertical_logo": false
+	  }
+	}
+]

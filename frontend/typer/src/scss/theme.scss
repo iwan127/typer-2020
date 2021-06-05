@@ -1,0 +1,25 @@
+@import './utils';
+
+@include load-font-face('Lato', ('regular', 'italic', 'bold', 'bolditalic', 'medium', 'mediumitalic'));
+html {
+  min-width: 360px;
+  font-size: $fs-base;
+}
+html, body {
+  color: $blue-1;
+}
+
+.container-fluid {
+  padding-left: $container-padding;
+  padding-right: $container-padding;
+}
+
+@font-face {
+  font-family: 'Dusha';
+  src: url('./fonts/dusha/dusha-regular-webfont.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+.dusha {
+  font-family: 'Dusha';
+}
