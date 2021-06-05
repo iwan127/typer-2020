@@ -2,7 +2,7 @@
 
   <ng-container *ngIf="loaded">
     <form #form="ngForm" (ngSubmit)="savePredictions()">
-      <div class="alert alert-info">
+      <div *ngIf="false" class="alert alert-info">
         <div class="d-flex align-items-center w-100 flex-md-row flex-column">
           <div class="pr-md-3 mb-3 mb-md-0">
             <strong>Uwaga!</strong> Dostępne są wyniki pytań dodatkowych.
@@ -153,7 +153,7 @@
             </div>
             <button *ngIf="!prediction.editable || !match.predictionEnabled" type="button" (click)="goToAllMatchPredictions(match)"
                 placement="top" ngbTooltip="Zobacz typy innych użytkowników" class="btn btn-clear">
-              <span class="fa fa-dice color-red"><!-- // --></span>
+              <span class="fa fa-dice text-secondary"><!-- // --></span>
             </button>
           </div>
         </div>

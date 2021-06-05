@@ -12,7 +12,7 @@ import { appSettings } from '../../utils/app-settings';
 @Component({
   selector: 'app-predictions',
   templateUrl: './predictions.component.html',
-  styleUrls: ['./predictions.component.scss']
+  styleUrls: ['./predictions.component.scss'],
 })
 export class PredictionsComponent extends BaseComponent {
   private router: Router;

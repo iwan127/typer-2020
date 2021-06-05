@@ -2,18 +2,18 @@
 
 .form-control.score-input {
   width: 50px;
-  border-color: rgba($blue-1, .5);
+  border-color: rgba($primary, .5);
   text-align: center;
 }
 .form-group-h {
   &:hover {
-    background-color: rgba($blue-1, .25);
+    background-color: rgba($primary, .25);
   }
   &.form-group-bg {
-    background-color: rgba($blue-1, .13);
+    background-color: rgba($primary, .13);
 
     &:hover {
-      background-color: rgba($blue-1, .25);
+      background-color: rgba($primary, .25);
     }
   }
 }

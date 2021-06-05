@@ -7,7 +7,7 @@
   </ngb-alert>
 </div>
 
-<div class="container main-message mb-4" *ngIf="messagesService.displayMainMessage">
+<div class="container main-message mb-4" *ngIf="false && messagesService.displayMainMessage">
   <ngb-alert [type]="'info'" [dismissible]="false">
     <div (click)="toggleMainMessage()" class="c-pointer d-flex">
       <strong>Wyniki typera</strong>

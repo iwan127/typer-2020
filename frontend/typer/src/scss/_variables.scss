@@ -7,17 +7,18 @@ $assets: '../../assets/';
 $trans: transparent;
 $white: #fff;
 $black: #000;
-$blue-1: #0f3f79; // tlo
-$blue-2: #1f7ba1;
-$blue-3: #041e4d;
-$blue-4: #77a9e7; // tlo
-$blue-5: #bfd2e7; // tlo
-$blue-6: rgba($blue-1, .3);
 $gray-1: #343a40; // tlo headera
 $gray-2: #aaa8ae; // kolor naglowkow tabeli
 $green-1: #5fab16; // kolor 'success'
 $orange-1: #e28b09; // kolor 'warning'
-$red-1: #b40107; // kolor główny
+$orange-2: rgb(237, 110, 41); // tlo - secondary
+$blue-1: #2eb8c3; // kolor główny
+$blue-2: #1f7ba1;
+$blue-3: #041e4d;
+$blue-4: #77a9e7; // tlo
+$blue-5: #bfd2e7; // tlo
+$blue-7: #00626b;
+$blue-6: rgba($blue-7, .3);
 $red-2: #eb0b0b; // kolor 'error'
 
 // CZCIONKI
@@ -54,12 +55,12 @@ $container-max-widths: (
 );
 
 $font-family-sans-serif: 'Lato', sans-serif;
-$body-color: $white;
-$body-bg: $blue-1;
+$body-color: $blue-1;
+$body-bg: $white;
 $link-color: $white;
 
-$primary:       $red-1;
-$secondary:     $blue-1;
+$primary:       $blue-7;
+$secondary:     $orange-2;
 $success:       $green-1;
 $info:          $blue-4;
 $warning:       $orange-1;
@@ -67,11 +68,12 @@ $danger:        $red-2;
 $light:         $blue-4;
 $dark:          $blue-3;
 
-$navbar-dark-color: $white;
-$navbar-dark-hover-color: $white;
+$navbar-dark-color: $primary;
+$navbar-dark-hover-color: $primary;
+$navbar-dark-active-color: $secondary;
 
-$link-color: $blue-1;
-$link-hover-color: $red-1;
+$link-color: $orange-2;
+$link-hover-color: $primary;
 $link-hover-decoration: none;
 
 $border-radius: 10px;
@@ -79,7 +81,7 @@ $border-radius: 10px;
 $h1-font-size: map-get($font-sizes-list, 'big');
 
 $card-border-width: 0;
-$card-cap-bg: $red-1;
+$card-cap-bg: $secondary;
 
 $card-inner-border-radius: $border-radius;
 
@@ -88,9 +90,11 @@ $input-padding-x: .4rem;
 
 $nav-tabs-border-width: 0;
 $nav-link-disabled-color: $gray-2;
-$nav-tabs-link-active-bg: rgba($blue-1, .75);
+$nav-tabs-link-active-bg: rgba($primary, .75);
 $nav-tabs-link-active-color: $white;
 $nav-tabs-border-radius: 0;
+
+// $card-bg: 
 
 /*
 $input-disabled-bg: $blue-3;

@@ -6,12 +6,13 @@
 
 .navbar-brand {
     padding: 0;
-    font-family: 'Dusha';
+    font-family: 'Bridge';
     line-height: 1.2rem;
     text-align: center;
 }
 
 .brand-main {
     display: block;
-    font-size: get-fs('xlarge-s');
+    padding-bottom: 1px;
+    font-size: get-fs('xlarge');
 }

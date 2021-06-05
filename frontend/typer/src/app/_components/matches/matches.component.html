@@ -35,7 +35,7 @@
           </div>
           <button *ngIf="!match.predictionEnabled" type="button" (click)="goToAllMatchPredictions(match)"
               placement="top" ngbTooltip="Zobacz typy innych użytkowników" class="btn btn-clear mr-1 d-sm-none">
-            <span class="fa fa-dice color-red"><!-- // --></span>
+            <span class="fa fa-dice text-secondary"><!-- // --></span>
           </button>
         </div>
         <div class="ml-md-3 mr-md-3 d-flex align-items-center match-teams">
@@ -47,7 +47,7 @@
           <div *ngIf="match.score" class="mr-1 mr-sm-5 ml-sm-0 ml-2 font-weight-bold">{{ match.score.regular }}</div>
           <button *ngIf="!match.predictionEnabled" type="button" (click)="goToAllMatchPredictions(match)"
               placement="top" ngbTooltip="Zobacz typy innych użytkowników" class="btn btn-clear mr-3 d-none d-sm-block">
-            <span class="fa fa-dice color-red"><!-- // --></span>
+            <span class="fa fa-dice text-secondary"><!-- // --></span>
           </button>
         </div>
       </div>

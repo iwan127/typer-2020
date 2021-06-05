@@ -32,11 +32,11 @@
 .alternative.navbar-nav .nav-item.level-0 {
   .nav-link {
     opacity: 1;
-    color: $blue-1;
+    color: $primary;
 
     &:hover,
     &:focus {
-      color: $red-1;
+      color: $secondary;
     }
   }
 }
