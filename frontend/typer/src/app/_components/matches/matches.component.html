@@ -31,7 +31,7 @@
         <div class="fs-medium-s match-info d-flex d-md-block justify-content-between mb-2 mb-sm-0">
           <div class="d-flex d-md-block flex-column flex-sm-row justify-content-between flex-fill">
             <div>{{ match.datetime | date:'dd-MM-yyyy HH:mm' }}</div>
-            <div *ngIf="match.getPlace()">{{ match.getPlace() }}</div>
+            <div *ngIf="match.place">{{ match.place }}</div>
           </div>
           <button *ngIf="!match.predictionEnabled" type="button" (click)="goToAllMatchPredictions(match)"
               placement="top" ngbTooltip="Zobacz typy innych użytkowników" class="btn btn-clear mr-1 d-sm-none">

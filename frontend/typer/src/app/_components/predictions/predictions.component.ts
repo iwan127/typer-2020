@@ -129,8 +129,8 @@ export class PredictionsComponent extends BaseComponent {
 
     // jeśli data obecnego meczu jest taka, jak poprzedniego, to nie pokazujemy jej
     if (this.prevMatch) {
-      const prevD = this.prevMatch.getDatetime();
-      const curD = match.getDatetime();
+      const prevD = this.prevMatch.datetimeObj;
+      const curD = match.datetimeObj;
       if (prevD.getFullYear() === curD.getFullYear()
           && prevD.getMonth() === curD.getMonth()
           && prevD.getDate() === curD.getDate()

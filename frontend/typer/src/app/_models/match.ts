@@ -16,6 +16,12 @@ export class Match extends BaseModel {
   score: Score = null;
   predictionEnabled = true;
 
+  date: string;
+  time: string;
+  place: string;
+  datetimeObj: Date;
+  datetimeString: string;
+
   protected fkFields: any = {
     teamHome: Team,
     teamAway: Team,
@@ -30,28 +36,37 @@ export class Match extends BaseModel {
   ) {
     super();
     this.setValuesByJson(options);
+    this.init();
   }
 
-  getDatetime(): Date {
+  private init(): void {
+    this.datetimeObj = this.getDatetimeObj();
+    this.date = this.getDate();
+    this.time = this.getTime();
+    this.datetimeString = this.getDatetimeString();
+    this.place = this.getPlace();
+  }
+
+  private getDatetimeObj(): Date {
     // TODO: użyć momentjs
     return new Date(this.datetime);
   }
 
-  getDatetimeString(): string {
-    return this.getDate() + ' ' + this.getTime();
+  private getDatetimeString(): string {
+    return this.date + ' ' + this.time;
   }
 
-  getDate(): string {
-    const d = this.getDatetime();
+  private getDate(): string {
+    const d = this.datetimeObj;
     return d.toLocaleDateString();
   }
 
-  getTime(): string {
-    const d = this.getDatetime();
+  private getTime(): string {
+    const d = this.datetimeObj;
     return d.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
   }
 
-  getPlace(): string {
+  private getPlace(): string {
     return this.stadium ? this.stadium.name + ', ' + this.stadium.city : null;
   }
 

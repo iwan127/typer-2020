@@ -22,14 +22,17 @@ export class Round extends BaseModel {
   shortname: string = null;
   roundType: GROUPSTAGE = null;
 
+  isGroupStage: boolean;
+
   constructor(
     options?: any
   ) {
     super();
     this.setValuesByJson(options);
+    this.init();
   }
 
-  isGroupstage(): boolean {
-    return this.roundType === GROUPSTAGE.GROUPSTAGE;
+  private init(): void {
+    this.isGroupStage = this.roundType === GROUPSTAGE.GROUPSTAGE;
   }
 }

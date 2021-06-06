@@ -70,7 +70,7 @@ export class MatchesComponent extends BaseComponent {
         this.matchRounds = resp;
         this.setLoaded();
         this.activatedRoute.fragment.subscribe(fragment => {
-          if (fragment !== null) {
+          if (fragment !== null && fragment !== undefined) {
             if (fragment.indexOf('round') > -1) {
               this.anchor = fragment;
               this.applyAnchor();
