@@ -125,7 +125,7 @@ export class PredictionsComponent extends BaseComponent {
     }
   }
 
-  getContext(match: Match, index: number): any {
+  getShowDate(match: Match, index: number): any {
     let showDate = true;
 
     // jeśli data obecnego meczu jest taka, jak poprzedniego, to nie pokazujemy jej
@@ -140,13 +140,7 @@ export class PredictionsComponent extends BaseComponent {
       }
     }
     this.prevMatch = match;
-    const ctx = {
-      match: match,
-      prediction: this.getMatchPrediction(match),
-      showDate: showDate,
-      index: index
-    };
-    return ctx;
+    return showDate;
   }
 
   // przekierowanie na stronę ze wszystkimi typami tego meczu
@@ -301,7 +295,7 @@ export class PredictionsComponent extends BaseComponent {
   }
 
   log(): void {
-    console.log('render');
+    console.log('render plural');
   }
 
 }

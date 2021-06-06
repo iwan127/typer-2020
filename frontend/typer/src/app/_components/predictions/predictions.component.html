@@ -1,6 +1,7 @@
 <app-card [title]="title" [cssClass]="'mb-5'">
 
   <ng-container *ngIf="loaded">
+    {{ log() }}
     <form #form="ngForm" (ngSubmit)="savePredictions()">
       <div *ngIf="false" class="alert alert-info">
         <div class="d-flex align-items-center w-100 flex-md-row flex-column">
@@ -12,9 +13,11 @@
       </div>
       
       <div *ngFor="let match of matches; let i=index">
-        <app-prediction></
-        <ng-container *ngTemplateOutlet="predictionForm;context:getContext(match, i)">
-        </ng-container>
+        <app-prediction
+            [index]="i"
+            [match]="match"
+            [prediction]="getMatchPrediction(match)"
+        ></app-prediction>
       </div>
       <div *ngIf="showSubmitButton()" class="submit-box py-2 text-center">
         <button type="submit" class="btn btn-sm btn-success px-4">Zapisz</button>
@@ -23,7 +26,7 @@
   </ng-container>
 
   <ng-template #predictionForm let-prediction="prediction" let-index="index" let-match="match" let-showDate="showDate">
-    {{ log() }}
+    
     <div [class.bg-green]="prediction.markedSuccess" [class.bg-red]="prediction.markedError">
       <div *ngIf="showDate" class="bg-blue color-white text-center p-1 mb-1">
         {{ match.date }}

@@ -1,4 +1,4 @@
-import { Component, Injector, ViewChild, ElementRef, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, Injector, ViewChild, ElementRef, ChangeDetectionStrategy, Input, NgZone, ViewContainerRef } from '@angular/core';
 import { Router } from '@angular/router';
 
 import * as services from '../../_services';
@@ -8,6 +8,7 @@ import { Subject, throwError as observableThrowError } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap, catchError } from 'rxjs/operators';
 import { NgForm } from '@angular/forms';
 import { appSettings } from '../../utils/app-settings';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-prediction',
@@ -29,11 +30,12 @@ export class PredictionComponent extends BaseComponent {
   }
 
   log(): void {
-    console.log('render');
+    console.log('render single');
   }
 
   // wywoływane po zmianie jakiegoś typu
   predictionChanged(): void {
+    console.log('predictionChanged');
     // this.formTouched = true;
     if (!this.prediction.goalsHomeValid()) {
       this.prediction.errorGoalsHome = 'Błędna wartość H';
