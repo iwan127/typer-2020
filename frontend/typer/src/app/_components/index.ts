@@ -1,6 +1,7 @@
 export * from './common';
 export * from './no-auth';
 export * from './pages';
+export * from './prediction/prediction.component';
 export * from './predictions/predictions.component';
 export * from './predictions-match/predictions-match.component';
 export * from './matches/matches.component';

@@ -11,7 +11,8 @@
         </div>
       </div>
       
-      <div *ngFor="let match of matches; let i=index;">
+      <div *ngFor="let match of matches; let i=index">
+        <app-prediction></
         <ng-container *ngTemplateOutlet="predictionForm;context:getContext(match, i)">
         </ng-container>
       </div>
@@ -22,6 +23,7 @@
   </ng-container>
 
   <ng-template #predictionForm let-prediction="prediction" let-index="index" let-match="match" let-showDate="showDate">
+    {{ log() }}
     <div [class.bg-green]="prediction.markedSuccess" [class.bg-red]="prediction.markedError">
       <div *ngIf="showDate" class="bg-blue color-white text-center p-1 mb-1">
         {{ match.date }}

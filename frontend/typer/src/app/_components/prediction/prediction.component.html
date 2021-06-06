@@ -1,0 +1,140 @@
+{{ log() }}
+<div [class.bg-green]="prediction.markedSuccess" [class.bg-red]="prediction.markedError">
+  <div *ngIf="showDate" class="bg-blue color-white text-center p-1 mb-1">
+    {{ match.date }}
+  </div>
+  <div class="form-group form-group-h no-gutters row align-items-center py-1 mb-1 flex-md-row flex-column"
+      [class.form-group-bg]="index % 2 == 1">
+    <div class="col-md d-flex align-items-center justify-content-between">
+      <div class="col flex-md-grow-0 d-flex align-items-center flex-md-row flex-column-reverse justify-content-between justify-content-md-start">
+        <div class="match-round-info text-nowrap text-md-left text-right color-blue fs-small-l">
+          <a *ngIf="match.round.isGroupStage" [routerLink]="['/','matches']" [fragment]="'group-' + match.group.id" class="color-blue">{{ match.group.name }}</a>
+          <a *ngIf="!match.round.isGroupStage" [routerLink]="['/','matches']" [fragment]="'round-' + match.round.id" class="color-blue">{{ match.round.shortname }}</a>
+        </div>
+        <div class="text-md-left text-center ml-md-3 text-nowrap">{{ match.time }}</div>
+      </div>
+      <div class="d-none d-md-flex align-items-center">
+        <label class="mb-0 mr-2 ml-auto" for="match-{{ match.id }}-home"
+            [class.text-danger]="prediction.errorGoalsHome">
+          <app-team [team]="match.teamHome" [avatarRight]="true"></app-team>
+        </label>
+        <span class="position-relative">
+          <input type="number" id="match-{{ match.id }}-home" min="0" class="form-control score-input"
+              [class.is-invalid]="prediction.errorGoalsHome"
+              [(ngModel)]="prediction.goalsHome" (ngModelChange)="predictionChanged()"
+              [attr.disabled]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? 'disabled' : null"
+              [attr.readonly]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? 'readonly' : null"
+              [attr.placeholder]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? predictionPlaceholder : null"
+          />
+          <span *ngIf="prediction.errorGoalsHome" class="prediction-error fa fa-exclamation-circle text-danger"><!-- // --></span>
+        </span>
+      </div>
+    </div>
+  
+    <div class="d-none d-md-block col flex-grow-0 px-3">-</div>
+
+    <div class="flex-md-grow-0 d-flex d-md-none w-100 align-items-center">
+      <div class="col px-0 flex-shrink-0">
+        <div class="d-flex justify-content-end">
+          <label class="d-block mb-0 mr-2" for="match-{{ match.id }}-home-m"
+              [class.text-danger]="prediction.errorGoalsHome">
+            <app-team [team]="match.teamHome" [avatarRight]="true"></app-team>
+          </label>
+          <span class="d-none d-sm-block d-md-none position-relative">
+            <input type="number" id="match-{{ match.id }}-home-m" min="0" class="ml-auto form-control score-input"
+                [class.is-invalid]="prediction.errorGoalsHome"
+                [(ngModel)]="prediction.goalsHome" (ngModelChange)="predictionChanged()"
+                [attr.disabled]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? 'disabled' : null"
+                [attr.readonly]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? 'readonly' : null"
+                [attr.placeholder]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? predictionPlaceholder : null"
+            />
+            <span *ngIf="prediction.errorGoalsHome" class="prediction-error fa fa-exclamation-circle text-danger"><!-- // --></span>
+          </span>
+        </div>
+      </div>
+      <div class="col flex-grow-0 px-3">-</div>
+      <div class="col px-0 flex-shrink-0">
+        <div class="d-flex justify-content-start">
+          <span class="d-none d-sm-block d-md-none position-relative">
+            <input type="number" id="match-{{ match.id }}-away-m" min="0" class="mr-auto form-control score-input"
+                [class.is-invalid]="prediction.errorGoalsAway"
+                [(ngModel)]="prediction.goalsAway" (ngModelChange)="predictionChanged()"
+                [attr.disabled]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? 'disabled' : null"
+                [attr.readonly]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? 'readonly' : null"
+                [attr.placeholder]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? predictionPlaceholder : null"
+            />
+            <span *ngIf="prediction.errorGoalsAway" class="prediction-error fa fa-exclamation-circle text-danger"><!-- // --></span>
+          </span>
+          <label class="d-block mb-0 ml-2" for="match-{{ match.id }}-away-m"
+              [class.text-danger]="prediction.errorGoalsAway">
+            <app-team [team]="match.teamAway"></app-team>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-md-grow-0 d-flex d-sm-none w-100 w-md-auto align-items-center py-2">
+      <div class="d-md-none col px-0 flex-shrink-0">
+        <div class="text-right">
+          <span class="d-block position-relative">
+            <input type="number" id="match-{{ match.id }}-home-m" min="0" class="ml-auto form-control score-input"
+                [class.is-invalid]="prediction.errorGoalsHome"
+                [(ngModel)]="prediction.goalsHome" (ngModelChange)="predictionChanged()"
+                [attr.disabled]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? 'disabled' : null"
+                [attr.readonly]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? 'readonly' : null"
+                [attr.placeholder]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? predictionPlaceholder : null"
+            />
+            <span *ngIf="prediction.errorGoalsHome" class="prediction-error fa fa-exclamation-circle text-danger"><!-- // --></span>
+          </span>
+        </div>
+      </div>
+      <div class="col flex-grow-0 px-3 align-self-start"></div>
+      <div class="d-md-none col px-0 flex-shrink-0">
+        <div class="text-left">
+          <span class="d-block position-relative">
+            <input type="number" id="match-{{ match.id }}-away-m" min="0" class="mr-auto form-control score-input"
+                [class.is-invalid]="prediction.errorGoalsAway"
+                [(ngModel)]="prediction.goalsAway" (ngModelChange)="predictionChanged()"
+                [attr.disabled]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? 'disabled' : null"
+                [attr.readonly]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? 'readonly' : null"
+                [attr.placeholder]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? predictionPlaceholder : null"
+            />
+            <span *ngIf="prediction.errorGoalsAway" class="prediction-error fa fa-exclamation-circle text-danger"><!-- // --></span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md d-flex align-items-center justify-content-between">
+      <div class="d-none d-md-flex align-items-center">
+        <span class="position-relative">
+          <input type="number" id="match-{{ match.id }}-away" min="0" class="form-control score-input"
+              [class.is-invalid]="prediction.errorGoalsAway"
+              [(ngModel)]="prediction.goalsAway" (ngModelChange)="predictionChanged()"
+              [attr.disabled]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? 'disabled' : null"
+              [attr.readonly]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? 'readonly' : null"
+              [attr.placeholder]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? predictionPlaceholder : null"
+          />
+          <span *ngIf="prediction.errorGoalsAway" class="prediction-error fa fa-exclamation-circle text-danger"><!-- // --></span>
+        </span>
+        <label class="mb-0 ml-2" for="match-{{ match.id }}-away"
+            [class.text-danger]="prediction.errorGoalsAway">
+          <app-team [team]="match.teamAway"></app-team>
+        </label>
+      </div>
+      
+      <div class="col-md flex-grow-0 d-flex align-items-center justify-content-end justify-content-md-start">
+        <div *ngIf="match.score" class="text-nowrap mr-md-3 mr-auto">
+          Wynik: {{ match.score.print() }}
+        </div>
+        <div *ngIf="prediction.points || prediction.points === 0" class="text-nowrap mr-3">
+          {{ prediction.points }} {{ 'pkt'|plural:prediction.points }}
+        </div>
+        <button *ngIf="!prediction.editable || !match.predictionEnabled" type="button" (click)="goToAllMatchPredictions(match)"
+            placement="top" ngbTooltip="Zobacz typy innych użytkowników" class="btn btn-clear">
+          <span class="fa fa-dice text-secondary"><!-- // --></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

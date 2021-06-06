@@ -17,6 +17,7 @@ import { AppRoutingModule } from './app.routing.module';
     AppComponent,
     components.BaseComponent,
     components.BaseFormComponent,
+    components.PredictionComponent,
     components.PredictionsComponent,
     components.PredictionsMatchComponent,
     components.MatchesComponent,

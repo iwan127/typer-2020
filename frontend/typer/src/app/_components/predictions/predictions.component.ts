@@ -1,4 +1,4 @@
-import { Component, Injector, ViewChild, ElementRef } from '@angular/core';
+import { Component, Injector, ViewChild, ElementRef, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 
 import * as services from '../../_services';
@@ -13,6 +13,7 @@ import { appSettings } from '../../utils/app-settings';
   selector: 'app-predictions',
   templateUrl: './predictions.component.html',
   styleUrls: ['./predictions.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PredictionsComponent extends BaseComponent {
   private router: Router;
@@ -292,6 +293,15 @@ export class PredictionsComponent extends BaseComponent {
           });
       }
     }
+  }
+
+  matchTrackbyFn(index: number, match: Match): number {
+    console.log('refresh', match.id);
+    return match.id;
+  }
+
+  log(): void {
+    console.log('render');
   }
 
 }
