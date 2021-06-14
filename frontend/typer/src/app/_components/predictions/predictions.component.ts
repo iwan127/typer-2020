@@ -154,6 +154,10 @@ export class PredictionsComponent extends BaseComponent {
     return isValid;
   }
 
+  onFormTouched(formTouched: boolean): void {
+    this.formTouched = formTouched;
+  }
+
   showSubmitButton(): boolean {
     return this.isFormValid() && this.formTouched;
   }
@@ -213,7 +217,6 @@ export class PredictionsComponent extends BaseComponent {
           this.formTouched = false;
           this.messagesService.addSuccessMessage('Typy zostały zapisane', true);
         }
-        console.log('saved', data);
       }, error => {
         if (this.predictionsCreated && this.predictionsEdited) {
           this.messagesService.addErrorMessage('Wystąpił błąd. Niektóre typy mogły nie zostać zapisane', true);
@@ -221,7 +224,6 @@ export class PredictionsComponent extends BaseComponent {
       });
     this.predictionsService.updateItems(this.predictions.filter(pr => pr.id && pr.isValid() && pr.editable))
       .subscribe(data => {
-        console.log('saved', data);
         this.predictionsEdited = true;
         if (this.predictionsCreated && this.predictionsEdited) {
           this.formTouched = false;
@@ -290,12 +292,11 @@ export class PredictionsComponent extends BaseComponent {
   }
 
   matchTrackbyFn(index: number, match: Match): number {
-    console.log('refresh', match.id);
     return match.id;
   }
 
   log(): void {
-    console.log('render plural');
+    // console.log('render plural');
   }
 
 }

@@ -308,8 +308,7 @@ export class BaseApiService<T> {
 
   // obsługa błędu dla jednego obiektu
   handleItemError(error: any, caught: Observable<any>): Observable<never> {
-    console.log('Błędna odpowiedź z serwera w serwisie: ' + error);
-    console.log('error', error.error);
+    console.error('Błędna odpowiedź z serwera w serwisie: ' + error);
     this.messagesService.addErrorMessageFromApi(error);
     this.goToErrorPage(error);
     return throwError(error);
@@ -317,7 +316,7 @@ export class BaseApiService<T> {
 
   // obsługa błędu dla listy obiektów
   handleItemsError(error: any, caught: Observable<Array<T>>): Observable<never> {
-    console.log('Błędna odpowiedź z serwera w serwisie: ' + error);
+    console.error('Błędna odpowiedź z serwera w serwisie: ' + error);
     this.goToErrorPage(error);
     return throwError(error);
   }
@@ -338,10 +337,10 @@ export class BaseApiService<T> {
           const msg = errorObj['error'];
           return msg;
         } else if (error.hasOwnProperty('status') && error.hasOwnProperty('statusText')) {
-          console.log('Bład ' + error['status'] + ', czyli: ' + error['statusText']);
+          console.error('Bład ' + error['status'] + ', czyli: ' + error['statusText']);
           return 'Wystąpił błąd w komunikacji z serwerem (kod błędu: ' + error['status'] + ') . Spróbuj ponownie później.';
         } else {
-          console.log('Błąd w komunikacji z serwerem: ' + error);
+          console.error('Błąd w komunikacji z serwerem: ' + error);
           return 'Wystąpił błąd w komunikacji z serwerem. Spróbuj ponownie później.';
         }
       } else {

@@ -1,7 +1,6 @@
 <app-card [title]="title" [cssClass]="'mb-5'">
 
   <ng-container *ngIf="loaded">
-    {{ log() }}
     <form #form="ngForm" (ngSubmit)="savePredictions()">
       <div *ngIf="false" class="alert alert-info">
         <div class="d-flex align-items-center w-100 flex-md-row flex-column">
@@ -11,12 +10,21 @@
           <div class="ml-md-auto"><a [routerLink]="['/', 'questions', 'results']" class="btn btn-sm btn-primary px-4">Przejdź do wyników</a></div>
         </div>
       </div>
+      <div class="alert alert-info">
+        <div class="d-flex align-items-center w-100 flex-md-row flex-column">
+          <div class="pr-md-3 mb-3 mb-md-0">
+            Poza typowaniem wyników meczów, można też odpowiadać na <strong>pytania dodatkowe.</strong>
+          </div>
+          <div class="ml-md-auto"><a [routerLink]="['/', 'questions']" class="btn btn-sm btn-primary px-4">Przejdź do pytań</a></div>
+        </div>
+      </div>
       
       <div *ngFor="let match of matches; let i=index">
         <app-prediction
             [index]="i"
             [match]="match"
             [prediction]="getMatchPrediction(match)"
+            (onFormTouched)="onFormTouched($event)"
         ></app-prediction>
       </div>
       <div *ngIf="showSubmitButton()" class="submit-box py-2 text-center">

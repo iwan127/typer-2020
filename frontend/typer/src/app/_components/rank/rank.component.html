@@ -9,10 +9,9 @@
         [class.rank-my-user]="up.user.id === user.id">
       <div class="rank-no text-center">{{ up.position }}</div>
       <div class="flex-fill"><app-user [userObj]="up.user" [avatarSize]="'small'" [linkInheritColor]="true"></app-user></div>
-      <div class="rank-points ml-auto text-center">{{ up.nExtraQuestions }}<span class="text-danger">*</span></div>
+      <div *ngIf="false" class="rank-points ml-auto text-center">{{ up.nExtraQuestions }}<span class="text-danger">*</span></div>
       <div class="rank-points ml-auto text-center">{{ up.points }}</div>
     </div>
   </div>
-  <div class="fs-medium-s pt-4"><span class="text-danger">*</span> Punkty za pytania dodatkowe. Z uwagi na to, że nie wszyscy zdążyli odpowiedzieć na pytania dodatkowe,
-    stworzony będzie osobny ranking uwzględniający tylko te pytania</div>
+  <div *ngIf="false" class="fs-medium-s pt-4"><span class="text-danger">*</span> Punkty za pytania dodatkowe.</div>
 </app-card>

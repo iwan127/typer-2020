@@ -137,12 +137,12 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 AUTH_USER_MODEL = 'system.SystemUser'
 
-EMAIL_HOST = 'mail.aitsolutions.pl'
+EMAIL_HOST = 'mail53.mydevil.net'
 EMAIL_PORT = '587'
-EMAIL_HOST_USER = 'typer@dev-ait.pl'
-EMAIL_FROM = 'typer@dev-ait.pl'
+EMAIL_HOST_USER = 'typer@typer.usermd.net'
+EMAIL_FROM = 'typer@typer.usermd.net'
 DEFAULT_FROM_EMAIL = EMAIL_FROM
-EMAIL_HOST_PASSWORD = '8JSQHNtj'
+EMAIL_HOST_PASSWORD = 'Lz9EtD2H)itE@$yKv#g1'
 EMAIL_USE_TLS = True
 
 LOCALE_PATHS = (

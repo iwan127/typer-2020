@@ -54,7 +54,6 @@ export class ExtraQuestionsComponent extends BaseComponent {
     this.answersService.getItemsList().subscribe(resp => {
       this.answers = resp;
       this.setLoaded();
-      console.log('loaded');
     });
   }
 
@@ -90,7 +89,6 @@ export class ExtraQuestionsComponent extends BaseComponent {
           this.formTouched = false;
           this.messagesService.addSuccessMessage('Odpowiedzi zostały zapisane', true);
         }
-        console.log('saved', data);
       }, error => {
         if (this.answersCreated && this.answersEdited) {
           this.messagesService.addErrorMessage('Wystąpił błąd. Niektóre odpowiedzi mogły nie zostać zapisane', true);
@@ -98,7 +96,6 @@ export class ExtraQuestionsComponent extends BaseComponent {
       });
     this.answersService.updateItems(this.answers.filter(ans => ans.id && ans.isValid() && ans.editable))
       .subscribe(data => {
-        console.log('saved', data);
         this.answersEdited = true;
         if (this.answersCreated && this.answersEdited) {
           this.formTouched = false;

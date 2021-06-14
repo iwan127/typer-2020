@@ -43,7 +43,6 @@ export class AnswersService extends BaseApiService<Answer> {
   getAllItemsList(): Observable<Array<Answer>> {
     this.beforeRequest();
     const url = this.getUrl('list') + 'all/';
-    console.log('url', url);
     return this.http
       .get(url, {headers: this.headers})
       .pipe(

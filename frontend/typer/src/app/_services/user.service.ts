@@ -62,7 +62,6 @@ export class UserService extends BaseApiService<User> {
 
   // dodanie użytkownika do 'window', żeby był dostępny globalnie
   saveGlobal(user: User): void {
-    console.log('set', user ? user['id'] : null);
     window['currentUser'] = user;
     this.currentUser = user;
   }

@@ -6,6 +6,7 @@ export class Team extends BaseModel {
   shortname: string = null;
   logo: string = null;
   vertical_logo: boolean = null;
+  repeat_logo: boolean = null;
 
   constructor(
     options?: any

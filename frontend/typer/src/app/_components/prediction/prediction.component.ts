@@ -1,4 +1,4 @@
-import { Component, Injector, ViewChild, ElementRef, ChangeDetectionStrategy, Input, NgZone, ViewContainerRef } from '@angular/core';
+import { Component, Injector, ViewChild, ElementRef, ChangeDetectionStrategy, Input, NgZone, ViewContainerRef, ChangeDetectorRef, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 import * as services from '../../_services';
@@ -21,22 +21,49 @@ export class PredictionComponent extends BaseComponent {
   @Input() prediction: Prediction;
   @Input() index: number;
   @Input() showDate: boolean;
+  @Output() onFormTouched = new EventEmitter<boolean>();
+
+  _formTouched: boolean;
+  get formTouched(): boolean {
+    return this._formTouched;
+  }
+  set formTouched(formTouched: boolean) {
+    this._formTouched = formTouched;
+    this.onFormTouched.next(this.formTouched);
+  }
+
+  isPredictionDisabled = false;
+  private isPredictionEmpty = true;
+
+  private predictionDisabledPlaceholder = '?';
+  private predictionEmptyPlaceholder = 'x';
+  predictionPlaceholder: string;
 
   private router: Router;
+  private cdr: ChangeDetectorRef;
 
   constructor(protected injectorObj: Injector) {
     super(injectorObj);
     this.router = injectorObj.get(Router);
+    this.cdr = injectorObj.get(ChangeDetectorRef);
+  }
+
+  ngOnInit(): void {
+    this.isPredictionDisabled = !this.prediction.editable || !this.match.predictionEnabled || this.prediction.forceDisabled;
+    this.predictionPlaceholder = this.getPredictionPlaceholder();
   }
 
   log(): void {
-    console.log('render single');
+    // console.log('render single');
+  }
+
+  private getPredictionPlaceholder(): string {
+    return this.isPredictionDisabled ? this.predictionDisabledPlaceholder : null;
   }
 
   // wywoływane po zmianie jakiegoś typu
   predictionChanged(): void {
-    console.log('predictionChanged');
-    // this.formTouched = true;
+    this.formTouched = true;
     if (!this.prediction.goalsHomeValid()) {
       this.prediction.errorGoalsHome = 'Błędna wartość H';
     } else {
@@ -47,6 +74,7 @@ export class PredictionComponent extends BaseComponent {
     } else {
       this.prediction.errorGoalsAway = null;
     }
+    this.cdr.detectChanges();
   }
 
   // przekierowanie na stronę ze wszystkimi typami tego meczu

@@ -22,9 +22,9 @@
           <input type="number" id="match-{{ match.id }}-home" min="0" class="form-control score-input"
               [class.is-invalid]="prediction.errorGoalsHome"
               [(ngModel)]="prediction.goalsHome" (ngModelChange)="predictionChanged()"
-              [attr.disabled]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? 'disabled' : null"
-              [attr.readonly]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? 'readonly' : null"
-              [attr.placeholder]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? predictionPlaceholder : null"
+              [attr.disabled]="isPredictionDisabled ? 'disabled' : null"
+              [attr.readonly]="isPredictionDisabled ? 'readonly' : null"
+              [attr.placeholder]="predictionPlaceholder"
           />
           <span *ngIf="prediction.errorGoalsHome" class="prediction-error fa fa-exclamation-circle text-danger"><!-- // --></span>
         </span>
@@ -44,9 +44,9 @@
             <input type="number" id="match-{{ match.id }}-home-m" min="0" class="ml-auto form-control score-input"
                 [class.is-invalid]="prediction.errorGoalsHome"
                 [(ngModel)]="prediction.goalsHome" (ngModelChange)="predictionChanged()"
-                [attr.disabled]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? 'disabled' : null"
-                [attr.readonly]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? 'readonly' : null"
-                [attr.placeholder]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? predictionPlaceholder : null"
+                [attr.disabled]="isPredictionDisabled ? 'disabled' : null"
+                [attr.readonly]="isPredictionDisabled ? 'readonly' : null"
+                [attr.placeholder]="predictionPlaceholder"
             />
             <span *ngIf="prediction.errorGoalsHome" class="prediction-error fa fa-exclamation-circle text-danger"><!-- // --></span>
           </span>
@@ -59,9 +59,9 @@
             <input type="number" id="match-{{ match.id }}-away-m" min="0" class="mr-auto form-control score-input"
                 [class.is-invalid]="prediction.errorGoalsAway"
                 [(ngModel)]="prediction.goalsAway" (ngModelChange)="predictionChanged()"
-                [attr.disabled]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? 'disabled' : null"
-                [attr.readonly]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? 'readonly' : null"
-                [attr.placeholder]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? predictionPlaceholder : null"
+                [attr.disabled]="isPredictionDisabled ? 'disabled' : null"
+                [attr.readonly]="isPredictionDisabled ? 'readonly' : null"
+                [attr.placeholder]="predictionPlaceholder"
             />
             <span *ngIf="prediction.errorGoalsAway" class="prediction-error fa fa-exclamation-circle text-danger"><!-- // --></span>
           </span>
@@ -80,9 +80,9 @@
             <input type="number" id="match-{{ match.id }}-home-m" min="0" class="ml-auto form-control score-input"
                 [class.is-invalid]="prediction.errorGoalsHome"
                 [(ngModel)]="prediction.goalsHome" (ngModelChange)="predictionChanged()"
-                [attr.disabled]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? 'disabled' : null"
-                [attr.readonly]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? 'readonly' : null"
-                [attr.placeholder]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? predictionPlaceholder : null"
+                [attr.disabled]="isPredictionDisabled ? 'disabled' : null"
+                [attr.readonly]="isPredictionDisabled ? 'readonly' : null"
+                [attr.placeholder]="predictionPlaceholder"
             />
             <span *ngIf="prediction.errorGoalsHome" class="prediction-error fa fa-exclamation-circle text-danger"><!-- // --></span>
           </span>
@@ -95,9 +95,9 @@
             <input type="number" id="match-{{ match.id }}-away-m" min="0" class="mr-auto form-control score-input"
                 [class.is-invalid]="prediction.errorGoalsAway"
                 [(ngModel)]="prediction.goalsAway" (ngModelChange)="predictionChanged()"
-                [attr.disabled]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? 'disabled' : null"
-                [attr.readonly]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? 'readonly' : null"
-                [attr.placeholder]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? predictionPlaceholder : null"
+                [attr.disabled]="isPredictionDisabled ? 'disabled' : null"
+                [attr.readonly]="isPredictionDisabled ? 'readonly' : null"
+                [attr.placeholder]="predictionPlaceholder"
             />
             <span *ngIf="prediction.errorGoalsAway" class="prediction-error fa fa-exclamation-circle text-danger"><!-- // --></span>
           </span>
@@ -111,9 +111,9 @@
           <input type="number" id="match-{{ match.id }}-away" min="0" class="form-control score-input"
               [class.is-invalid]="prediction.errorGoalsAway"
               [(ngModel)]="prediction.goalsAway" (ngModelChange)="predictionChanged()"
-              [attr.disabled]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? 'disabled' : null"
-              [attr.readonly]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? 'readonly' : null"
-              [attr.placeholder]="!prediction.editable || !match.predictionEnabled || prediction.forceDisabled ? predictionPlaceholder : null"
+              [attr.disabled]="isPredictionDisabled ? 'disabled' : null"
+              [attr.readonly]="isPredictionDisabled ? 'readonly' : null"
+              [attr.placeholder]="predictionPlaceholder"
           />
           <span *ngIf="prediction.errorGoalsAway" class="prediction-error fa fa-exclamation-circle text-danger"><!-- // --></span>
         </span>

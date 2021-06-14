@@ -2,6 +2,7 @@
   <span *ngIf="avatarRight" class="team-name d-block">{{ team.name }}</span>
   <span *ngIf="team.logo" class="avatar-img d-block flex-shrink-0 size-{{ avatarSize }}"
       [class.vertical]="team.vertical_logo"
+      [class.repeat]="team.repeat_logo"
       [class.ml-2]="avatarRight" [class.mr-2]="!avatarRight"
       [ngStyle]="{'background-image': 'url(' + team.logo + ')'}"><!-- // --></span>
   <span *ngIf="!avatarRight" class="team-name d-block">{{ team.name }}</span>

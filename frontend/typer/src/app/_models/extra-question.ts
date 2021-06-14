@@ -3,6 +3,7 @@ import { Group } from './group';
 
 export class ExtraQuestion extends BaseModel {
   id: number = null;
+  close_datetime = null;
   answerEnabled = true;
   text: string = null;
   points: number = null;

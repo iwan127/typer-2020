@@ -6,4 +6,4 @@ class TeamSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = tea_m.Team
-        fields = ('id', 'name', 'shortname', 'logo', 'vertical_logo', )
+        fields = ('id', 'name', 'shortname', 'logo', 'vertical_logo', 'repeat_logo' )

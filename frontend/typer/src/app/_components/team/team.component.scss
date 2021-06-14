@@ -9,6 +9,10 @@
         background-size: 100% auto;
         background-repeat: repeat-y;
     }
+    
+    &.repeat {
+        background-repeat: repeat;
+    }
 }
 .team-name {
     margin-top: .2rem;

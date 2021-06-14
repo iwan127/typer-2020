@@ -27,6 +27,7 @@ class Team(utils_models.BaseModel):
     shortname = models.CharField(verbose_name=_('Nazwa skrócona'), max_length=3)
     logo = models.ImageField(verbose_name=_('Herb / flaga'), upload_to=upload_file_name, blank=True)
     vertical_logo = models.BooleanField(verbose_name=_('Czy logo pionowe'), default=False)
+    repeat_logo = models.BooleanField(verbose_name=_('Czy logo ma być powtarzane w obu osiach'), default=False)
 
     def __str__(self):
         return self.name
