@@ -36,7 +36,8 @@
               [attr.readonly]="!answer.editable || !question.answerEnabled ? 'readonly' : null">
             <option *ngFor="let opt of question.possibleAnswers" [ngValue]="opt.id">{{ opt.name }}</option>
           </select>
-          <small class="pl-3 ml-auto">Odpowiedzi można udzielać do <strong>{{ question.close_datetime | date : 'dd-MM-y HH:mm' }}</strong></small>
+          <small *ngIf="question.answerEnabled" class="pl-3 ml-auto">Odpowiedzi można udzielać do <strong>{{ question.close_datetime | date : 'dd-MM-y HH:mm' }}</strong></small>
+          <small *ngIf="!question.answerEnabled" class="pl-3 ml-auto">Upłynął termin udzielania odpowiedzi</small>
         </div>
       </div>
     </div>
