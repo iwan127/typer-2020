@@ -2,7 +2,7 @@
 
   <ng-container *ngIf="loaded">
     <form #form="ngForm" (ngSubmit)="savePredictions()">
-      <div class="alert alert-info">
+      <div *ngIf="areMyPredictions" class="alert alert-info">
         <div class="d-flex align-items-center w-100 flex-md-row flex-column">
           <div class="pr-md-3 mb-3 mb-md-0">
             <strong>Uwaga!</strong> Upłynął czas odpowiadania na pytania pytania dodatkowe.

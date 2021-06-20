@@ -36,6 +36,7 @@ export class PredictionsComponent extends BaseComponent {
 
   userPredictionId: number = null;
   userPrediction: User = null;
+  areMyPredictions: boolean = true;
 
   predictionPlaceholder: string = null;
 
@@ -60,6 +61,9 @@ export class PredictionsComponent extends BaseComponent {
   afterGetUser(): void {
     this.getPredictionUserId();
     if (this.userPredictionId) {
+      if (this.user.id !== +this.userPredictionId) {
+        this.areMyPredictions = false;
+      }
       this.getUserPrediction();
     } else {
       this.prepareMatchService();
