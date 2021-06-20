@@ -125,7 +125,7 @@ export class PredictionsComponent extends BaseComponent {
     }
   }
 
-  getShowDate(match: Match, index: number): any {
+  getShowDate(match: Match): boolean {
     let showDate = true;
 
     // jeśli data obecnego meczu jest taka, jak poprzedniego, to nie pokazujemy jej

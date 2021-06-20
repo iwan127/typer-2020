@@ -226,6 +226,15 @@ class ExtraQuestionListView(generics.ListAPIView):
 #    'id', 'answer_enabled', 'close_datetime', 'text', 'points', 'answer_type')
 
 
+class ExtraQuestionFinishedListView(ExtraQuestionListView):
+    
+    def get_queryset(self):
+        if self.request and self.request.user:
+            q = pre_m.ExtraQuestions.objects.filter(correct_answer__isnull=False)
+            return q
+        return None
+
+
 class AnswerListView(generics.ListCreateAPIView):
     owner_id = None
     serializer_class = pre_s.AnswerSimpleSerializer
@@ -320,6 +329,7 @@ class AnswerListView(generics.ListCreateAPIView):
 
 
 class AnswerAllListView(AnswerListView):
+    serializer_class = pre_s.AnswersAllSerializer
     permission_classes = (sys_p.AuthPermission, )
 
     def check_save_permisssions(self):

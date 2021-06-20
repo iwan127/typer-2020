@@ -11,5 +11,6 @@ export * from './messages.service';
 export * from './pages.service';
 export * from './groups-details.service';
 export * from './extra-questions.service';
+export * from './extra-questions-results.service';
 export * from './answers.service';
 export * from './rounds.service';

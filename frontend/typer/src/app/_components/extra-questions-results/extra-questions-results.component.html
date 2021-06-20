@@ -27,6 +27,7 @@
             </div>
             <div class="ml-auto">{{ answer.points | default : 0 }} pkt</div>
           </div>
+          <div *ngIf="!answers?.length" class="text-center p-2 form-group-h">brak odpowiedzi</div>
         </div>
       </div>
     </div>

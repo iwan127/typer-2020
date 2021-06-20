@@ -2,15 +2,18 @@
 
   <ng-container *ngIf="loaded">
     <form #form="ngForm" (ngSubmit)="savePredictions()">
-      <div *ngIf="false" class="alert alert-info">
+      <div class="alert alert-info">
         <div class="d-flex align-items-center w-100 flex-md-row flex-column">
           <div class="pr-md-3 mb-3 mb-md-0">
-            <strong>Uwaga!</strong> Dostępne są wyniki pytań dodatkowych.
+            <strong>Uwaga!</strong> Upłynął czas odpowiadania na pytania pytania dodatkowe.
           </div>
-          <div class="ml-md-auto"><a [routerLink]="['/', 'questions', 'results']" class="btn btn-sm btn-primary px-4">Przejdź do wyników</a></div>
+          <div class="d-flex flex-nowrap align-items-center ml-md-auto">
+            <div><a [routerLink]="['/', 'questions']" class="btn btn-sm btn-primary px-4">Zobacz swoje odpowiedzi</a></div>
+            <div class="ml-3"><a [routerLink]="['/', 'questions', 'results']" class="btn btn-sm btn-primary px-4">Zobacz wyniki</a></div>
+          </div>
         </div>
       </div>
-      <div class="alert alert-info">
+      <div *ngIf="false" class="alert alert-info">
         <div class="d-flex align-items-center w-100 flex-md-row flex-column">
           <div class="pr-md-3 mb-3 mb-md-0">
             Poza typowaniem wyników meczów, można też odpowiadać na <strong>pytania dodatkowe.</strong>
@@ -24,6 +27,7 @@
             [index]="i"
             [match]="match"
             [prediction]="getMatchPrediction(match)"
+            [showDate]="getShowDate(match)"
             (onFormTouched)="onFormTouched($event)"
         ></app-prediction>
       </div>

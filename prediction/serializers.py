@@ -39,13 +39,19 @@ class PredictionSerializer(PredictionBaseSerializer):
 
 
 class AnswerSimpleSerializer(serializers.HyperlinkedModelSerializer):
-    # userObj = sys_s.UserBaseSerializer(source='user')
     answer = serializers.CharField(source='answer_integer')
     questionId = serializers.IntegerField(source='question_id')
     
     class Meta:
         model = pre_m.ExtraQuestionsUserAnswers
         fields = ('id', 'answer', 'questionId', 'points', 'editable', )
+
+
+class AnswersAllSerializer(AnswerSimpleSerializer):
+    userObj = sys_s.UserBaseReadonlySerializer(source='user')
+    
+    class Meta(AnswerSimpleSerializer.Meta):
+        fields = AnswerSimpleSerializer.Meta.fields + ('userObj', )
 
 
 class UserPointsSerializer(serializers.HyperlinkedModelSerializer):

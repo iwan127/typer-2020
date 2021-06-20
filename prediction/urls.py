@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'extra/answers/all/$', pre_v.AnswerAllListView.as_view(), name='answer_all_list'),
     url(r'extra/answers/$', pre_v.AnswerListView.as_view(), name='answer_list'),
     url(r'extra/$', pre_v.ExtraQuestionListView.as_view(), name='extra_question_list'),
+    url(r'extra/finished/$', pre_v.ExtraQuestionFinishedListView.as_view(), name='extra_question_list'),
 #     url(r'(?P<pk>[0-9]+)/$', pre_v.PredictionListPreviewView.as_view(), name='prediction_edit'),
     url(r'$', pre_v.PredictionListView.as_view(), name='prediction_list')
 ]

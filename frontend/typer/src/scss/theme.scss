@@ -6,11 +6,18 @@ html {
   font-size: $fs-base;
 }
 html, body {
+  display: flex;
+  width: 100%;
+  min-height: 100%;
   color: $primary;
   background: linear-gradient(
     90deg, $blue-1 0%, 
     rgba($primary, .75) 100%
   );
+
+  app-root {
+    width: 100%;
+  }
 }
 
 .container-fluid {

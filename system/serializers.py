@@ -13,6 +13,12 @@ class UserBaseSerializer(serializers.HyperlinkedModelSerializer):
         extra_kwargs = {'nickname': {'required': True}}
 
 
+class UserBaseReadonlySerializer(UserBaseSerializer):
+    
+    class Meta(UserBaseSerializer.Meta):
+        read_only_fields =  UserBaseSerializer.Meta.fields
+
+
 class UserDetailsSerializer(UserBaseSerializer):
     
     class Meta(UserBaseSerializer.Meta):

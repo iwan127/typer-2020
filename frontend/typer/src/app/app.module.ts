@@ -70,6 +70,7 @@ import { AppRoutingModule } from './app.routing.module';
     services.MessagesService,
     services.PagesService,
     services.ExtraQuestionsService,
+    services.ExtraQuestionsResultsService,
     services.AnswersService,
     services.TeamsService,
     services.RoundsService,

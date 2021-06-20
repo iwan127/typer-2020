@@ -75,7 +75,9 @@ export class ExtraQuestionsComponent extends BaseComponent {
   savePredictions(): void {
     this.answersCreated = false;
     this.answersEdited = false;
-    this.answersService.createItems(this.answers.filter(ans => !ans.id && ans.isValid() && ans.editable))
+    const requestData = this.answers.filter(ans => !ans.id && ans.isValid() && ans.editable);
+    // requestData.forEach(ans => ans.userObj = this.user);
+    this.answersService.createItems(requestData)
       .subscribe(data => {
         const dataArr = <Array<Answer>> data;
         dataArr.forEach(newAns => {

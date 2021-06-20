@@ -17,6 +17,7 @@ export class Answer extends BaseModel {
   answer1Data: number = null;
   answer2Data: number = null;
   user: User = null;
+  // userObj: User = null;
 
   constructor(
     options?: any

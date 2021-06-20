@@ -29,7 +29,7 @@ export class ExtraQuestionsResultsComponent extends BaseComponent {
   constructor(protected injectorObj: Injector) {
     super(injectorObj);
     this.router = injectorObj.get(Router);
-    this.extraQuestionsService = injectorObj.get(services.ExtraQuestionsService);
+    this.extraQuestionsService = injectorObj.get(services.ExtraQuestionsResultsService);
     this.answersService = injectorObj.get(services.AnswersService);
     this.teamsService = injectorObj.get(services.TeamsService);
     this.roundsService = injectorObj.get(services.RoundsService);
