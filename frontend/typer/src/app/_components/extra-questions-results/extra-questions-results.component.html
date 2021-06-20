@@ -19,8 +19,7 @@
             </div>
             <div *ngIf="question.isMultiple()" class="flex-fill">
               <span *ngIf="answer.hasAnswer()">
-                <ng-container *ngTemplateOutlet="answerTmpl;context:getAnswerContext(answer.answer1, question)"></ng-container>
-                &nbsp;-&nbsp;
+                <ng-container *ngTemplateOutlet="answerTmpl;context:getAnswerContext(answer.answer1, question)"></ng-container>,
                 <ng-container *ngTemplateOutlet="answerTmpl;context:getAnswerContext(answer.answer2, question)"></ng-container>
               </span>
               <span *ngIf="!answer.hasAnswer()">brak odpowiedzi</span>

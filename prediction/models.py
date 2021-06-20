@@ -89,7 +89,7 @@ class UserPoints(utils_models.BaseModel):
 
 
 class ExtraQuestions(utils_models.BaseModel):
-    # TODO: zrobić odpowiedzi jako osobny model i zaznaczanie poprawnej odpowiedzi
+    # TODO: zrobić odpowiedzi jako osobny model i zaznaczanie poprawnej odpowiedzi (w panelu admina)
     # jako select z opcjami zrobionymi z tych odpowiedzi
     AT_TEXT = 1
     AT_SELECT_TEAM = 2
@@ -191,7 +191,7 @@ class ExtraQuestions(utils_models.BaseModel):
                 u_ans.save()
                 
                 # zapisanie punktów w tabeli sumującej punkty użytkownika
-                (up, created) = UserPoints.objects.get_or_create(user_id=u_ans.user.id)
+                (up, created) = UserPoints.objects.get_or_create(user_id=u_ans.user.id, defaults={'points': 0})
                 # up.points = up.points + u_pts
                 up.n_extra_questions = up.n_extra_questions + u_pts
                 up.save()
