@@ -4,7 +4,7 @@ import { Observable, throwError } from 'rxjs';
 
 @Injectable()
 export class MessagesService {
-  displayMainMessage = false;
+  displayMainMessage = true;
   mainMessageCollapsed = false;
   mainMessageTemporarilyCollapsed = false;
 

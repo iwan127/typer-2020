@@ -46,6 +46,7 @@ export class AppComponent implements AfterViewChecked, OnDestroy {
   }
 
   toggleMainMessage(): void {
+    console.log('sad');
     this.messagesService.mainMessageTemporarilyCollapsed = !this.messagesService.mainMessageTemporarilyCollapsed;
   }
 

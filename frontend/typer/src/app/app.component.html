@@ -7,7 +7,7 @@
   </ngb-alert>
 </div>
 
-<div class="container main-message mb-4" *ngIf="false && messagesService.displayMainMessage">
+<div class="container main-message mb-4" *ngIf="messagesService.displayMainMessage">
   <ngb-alert [type]="'info'" [dismissible]="false">
     <div (click)="toggleMainMessage()" class="c-pointer d-flex">
       <strong>Wyniki typera</strong>
@@ -15,27 +15,38 @@
           [class.fa-caret-down]="messagesService.mainMessageTemporarilyCollapsed"
           [class.fa-caret-up]="!messagesService.mainMessageTemporarilyCollapsed"><!-- // --></span>
     </div>
-    <div [ngbCollapse]="messagesService.mainMessageTemporarilyCollapsed">
+    <div [ngbCollapse]="messagesService.false">
       <br />
-      Z małym opóźnieniem spowodowanym moim wyjazdem i brakiem dostępu do internetu<br />
-      Z uwagi na to, że nie wszyscy zdążyli odpowiedzieć na pytania dodatkowe, nie są one wliczane do rankingu globalnego.
-      Stworzony będzie osobny ranking uwzględniający tylko te pytania<br /><br />
-      Trzeba przyznać, że rywalizacja była zacięta i walka o zwycięstwo trwała do samego końca. W międzyczasie wyniknął też jeden błą, w wyniku
-      którego nieprawidłowo były dodawane punkty za różnicę bramek (np. dla meczu Polska - Japonia z wynikiem 1-0 osoby, które
-      wytypowały wynik 0-1 dostawały 1 punkt, a, zgodnie z regulaminem, nie powinny dostać żadnego).<br /><br />
-      <strong>Lista zwycięzców:</strong><br />
-      <strong>1. marcin - 197 pkt.</strong><br />
-      <strong>2. iwan - 197 pkt.</strong><br />
-      <strong>3. zupa - 195 pkt.</strong><br /><br />
-      A oto nagrody:<br />
-      1. miejsce - wycieczka w Tatry<br />
-      2. miejsce - nieograniczony dostęp do mojego konta bankowego :)<br />
-      3. miejsce - sześciopak piwa<br /><br />
-      <strong>I jeszcze najlepsi w rankingu pytań dodatkowych:</strong><br />
-      <strong>1. monika i macko1983 - po 59 pkt.</strong><br />
-      <strong>3. marcin - 41 pkt.</strong><br /><br />
-      Nagrody dla powyższych osób zostaną ustalone i dostarczone niebawem :)<br /><br />
-      Dziękuję wszystkim za wspólną zabawę, a zwycięzcom gratuluję i zapraszam do następnej edycji Typera - już za dwa lata na EURO 2020 (na pewno Typer będzie lepiej zorganizowany)<br />
+      EURO 2020 dobiegło końca. Można powiedzieć, że walka o pozycję w rakingu była wyrównana i zacięta.
+      Zadanie w tym roku było o tyle trudne, że na tych Mistrzostwach często padały niespodziewane rezultaty.
+      <br /><br />
+      Laureaci zostali wyłonieni w 3 kategoriach:
+      <ul>
+        <li>typowanie wyników meczów,</li>
+        <li>odpowiedzi na pytania dodatkowe,</li>
+        <li><strong>mistrz Typera 2020</strong> (wyniki meczów + pytania dodatkowe).</li>
+      </ul>
+      Poniżej wypisani są laureaci każdej z kategorii. Ale w już w tym momencie można napisać,
+      że <strong class="text-secondary">zwycięzcą Typera 2020 został Mateusz</strong>, który typował trafnie wyniki meczów,
+      jak również potrafił przewidzieć przebieg Mistrzostw odpowiadając poprawnie na pytania dodatkowe.
+      <br /><br />
+      <strong><u>Laureaci Typera 2020:</u></strong><br />
+      <strong>1. Mateusz - 220 pkt.</strong><br />
+      2. iwan - 207 pkt.<br />
+      3. maka - 194 pkt.
+      <br /><br />
+      <strong><u>Laureaci typowania wyników meczów:</u></strong><br />
+      <strong>1. maka - 167 pkt.</strong><br />
+      2. Mateusz - 165 pkt.<br />
+      3. michal - 159 pkt.
+      <br /><br />
+      <strong><u>Laureaci odpowiadania na pytania dodatkowe:</u></strong><br />
+      <strong>1. Mateusz - 55 pkt.</strong><br />
+      2. domo - 54 pkt.<br />
+      3. iwan - 53 pkt.
+      <br /><br />
+      Gratuluję zwycięzcom, a im oraz pozostałym dziękuję za wspólną zabawę i zapraszam do następnej edycji Typera
+      - już w przyszłym roku na Mistrzostwach Świata w Katarze.<br />
       <i>Wojtek</i>
     </div>
   </ngb-alert>
